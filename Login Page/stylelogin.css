@@ -1,0 +1,203 @@
+
+body {
+    background-color: #175B85;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    height: auto;
+    
+}
+
+.welcome{
+    color: #000;
+    text-align: center;
+    font-family: 'Montserrat';    
+    font-size: auto;
+    font-weight: bold;
+
+}
+
+.email{
+    color:#000;
+    text-align: left;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.password{
+    color:#000;
+    text-align: left;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+.login-input{
+    display: block;  
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+}
+.logo img{
+    width: 150px;
+}
+
+.login-box {
+    width: 575px; /* Adjust the width as needed */
+    height: 425px; /* Adjust the height as needed */
+    display: flex;
+    border-radius: 20px; /* Optional: to add rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: to add a shadow */
+    background-color: white; /* Background color for the login box */
+    
+}
+
+
+.left, .right {
+    width: 50%;
+    padding: 20px; /* Optional: add padding for content */
+}
+
+.right {
+    background-color: lightgray; /* Background color for the left side */
+    border-top-right-radius: 20px; /* Rounded top-right corner */
+    border-bottom-right-radius: 20px; /* Rounded bottom-right corner */
+}
+
+.slogan {
+    color: rgb(19, 28, 249);
+    font-family: 'Montserrat';
+    font-size: 15px;
+    text-align: left;
+    
+   
+}
+
+.highlight {
+    color: rgb(0, 0, 0);
+}
+
+.left {
+    background-color: rgb(237, 235, 235); /* Background color for the right side */
+    border-top-left-radius: 20px; /* Rounded top-left corner */
+    border-bottom-left-radius: 20px; /* Rounded bottom-left corner */
+    
+}
+
+    button {
+        padding: 10px 20px; /* Adjust padding for a rectangular shape */
+        border: none;
+        border-radius: 5px; /* Slightly rounded corners */
+        background-color: #175B85; /* Blue background color */
+        color: white;
+        cursor: pointer;
+        width: 242px; /* Make the button width fit its content */
+        margin-top: 7px; /* Add some space above the button */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        font-weight: bold;
+    
+        
+    }
+
+.models {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+}
+
+.google-btn {
+    background-color: white; /* White background color */
+    border: 1px solid #ccc; /* Add a border */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    width: 243px; /* Set a specific width for the button */
+    margin-top: 10px; /* Add some space above the Google button */
+    color: #555; /* Text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+}
+
+.google-btn:hover {
+    background-color: #f1f1f1;
+}
+
+.google-logo {
+    height: 20px; /* Set the height of the Google logo */
+    margin-right: 10px; /* Add some space between the logo and the text */
+}
+
+
+hr {
+    margin: 10px 0; /* Adjust margin as needed */
+    border: none; /* Remove default border */
+    border-top: 1px solid #ccc; /* Add a solid border on top */
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%; /* Makes inputs take full width of the parent container */
+    padding: 6px; /* Adds padding inside the inputs */
+    margin-bottom: 16px; /* Adds space below each input */
+    border: 1px solid #ccc; /* Adds a light gray border */
+    border-radius: 4px; /* Rounded corners for inputs */
+    box-sizing: border-box; /* Ensures padding is included in the width */
+    border-top-right-radius: 5px; /* Rounded top-right corner */
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.credit{
+    font-family: 'Montserrat';
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    margin-top: 1px;
+    font-family: sans-serif;
+}
+
+.login-link{
+    display: flex;
+    justify-content: center;
+    font-size: 10px;
+    font-family: sans-serif;
+
+}
+.login-link a{
+    color: #000;
+}
+.or-separator {
+    font-family:'Montserrat';
+    font-weight: bold;
+    font-size: 13px ;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    }
+.or-separator::before,
+.or-separator::after {
+    content: '';
+    flex: 1px;
+    border-bottom: 1px solid #000;
+    margin: 0 10px; /* Memberi jarak antara garis dan teks "ATAU" */
+}
