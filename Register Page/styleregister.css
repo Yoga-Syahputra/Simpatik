@@ -13,7 +13,6 @@ body {
     justify-content: center;
     align-items: center;
     max-width: 100%;
-    height: auto;
     
 }
 
@@ -23,7 +22,17 @@ body {
     font-family: 'Montserrat';    
     font-size: auto;
     font-weight: bold;
+    margin-top: 12px;
+}
 
+.Deskripsi{
+    color: #000;
+    text-align: center;
+    font-family: 'Montserrat';    
+    font-size: auto;
+    margin-top: -20px;
+    margin-bottom: 25px;
+    
 }
 
 .email{
@@ -44,7 +53,9 @@ body {
 
 
 .login-input{
+    margin-top: -10px;
     display: block;  
+    margin-bottom: 8px;
 }
 
 .logo {
