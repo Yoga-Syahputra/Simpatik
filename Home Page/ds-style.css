@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    
+
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #175B85;
+    padding: 23px;    
+}
+
+.header a{
+    color: #fff;
+    font-size: 14px ;
+    text-decoration: none;
+    font-size: 16px;
+}
+.right a:nth-of-type(2) {
+    margin-left: 30px; 
+    border: 2px solid #fff; 
+    padding: 5px 25px;
+    border-radius: 20px;
+}
+
+.logo img {
+    width: auto;
+    height: 50px;
+    background-color: #175B85;
+        
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #175B85;
+    border-radius: 5px;
+}
+
+.content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(138, 132, 132);
+    padding: 100px;
+}
+
+.content img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.search-box {
+    position: relative;
+    z-index: 2; /* Agar kotak pencarian berada di atas gambar */
+    background: white;
+    padding: 5px 20px;
+    border-radius: 50px; /* Menambahkan border radius */
+    display: flex;
+    align-items: center;
+    width: 300px;
+}
+
+.search-box input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    box-sizing: border-box; /* Untuk menghindari padding mempengaruhi lebar input */
+    outline: none; /* Menghilangkan outline */
+}
+
+.search-box button {
+    padding: 10px;
+    border: none;
+    background: none; /* Menghapus background */
+    color: #ccc; /* Mengatur warna ikon */
+    border-radius: 50%;
+    /* cursor: pointer; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.search-box button i {
+    font-size: 16px;
+    margin-left: 60px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px; /* Adjust the gap between category items */
+}
+
+.category-list,
+.more-categories {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.more-categories {
+    display: none; /* Initially hide the additional categories */
+}
+
+.show-more {
+    text-align: center;
+    cursor: pointer;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.show-more:hover {
+    background-color: #f0f0f0;
+}
+
+.expanded .more-categories {
+    display: block; /* Show additional categories when expanded */
+}

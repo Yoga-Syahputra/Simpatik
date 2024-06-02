@@ -7,49 +7,52 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMlI1HDxFz5b5hS0yvoYTDxz0fS1RxDOxAjwbuA" crossorigin="anonymous">
     <title>Login_Page</title>
 </head>
-<body>    
+<body>
     <div class="container">
         <div class="login-box">
             <div class="left">
                 <div class="logo">
                     <img src="Group 16.png" alt="logo simpatik">
                 </div>
-                
                 <h2 class="welcome">Selamat datang!</h2>
-
                 <div class="login-input">
-                    <label for="email" class="email">Alamat Email</label> 
-                    <input type="email" placeholder="Email" id="email" name="email" required><br>
-                    <label for="password" class="password">Kata Sandi</label> 
-                    <input type="password" placeholder="Kata Sandi" id="password" name="password" required><br>
-                    <button type="submit">Log in</button>
-                </div>    
-                
-                    <div>
-                        <div class="login-link">
-                            <p>Belum punya akun? <a href="">Daftar di sini</a></p>
-                        </div>
-                        <div class="or-separator">ATAU</div>
-                        
+                    <div class="email-container">
+                        <label for="email" class="email">Alamat Email</label>
+                        <input type="email" placeholder="Email" id="email" name="email" required><br>
                     </div>
-                    <button type="button" class="google-btn"> <img src="google.png" alt="Google logo" class="google-logo">Masuk dengan Google</button>
-                
-            </div>
+                    <div class="password-container">
+                        <label for="password" class="password">Kata Sandi</label>
+                        <input type="password" placeholder="Kata Sandi" id="password" name="password" class="custom-input" required>
+                        <span class="toggle-password" onclick="togglePasswordVisibility()">
+                            <i class="fas fa-eye"></i>
+                        </span>
+                    </div>
+                    
 
-            <div class="right">
-                
-                <h1 class="slogan">Permudah akses untuk membaca buku secara <span class="highlight">daring!</span></h1>
-            
-                <div class="models">
-                    <img src="casual-life-3d-young-couple-sitting-on-the-floor-and-reading-books 1.png" alt ="model simpatik">                
+                    <button type="submit">Log in</button>
                 </div>
-
-
+                <div>
+                    <div class="login-link">
+                        <p>Belum punya akun? <a href="../Register Page/Signup.ht">Daftar di sini</a></p>
+                    </div>
+                    <div class="or-separator">ATAU</div>
+                </div>
+                <button type="button" class="google-btn">
+                    <img src="google.png" alt="Google logo" class="google-logo">Masuk dengan Google
+                </button>
+            </div>
+            <div class="right">
+                <h1 class="slogan">Permudah akses untuk membaca buku secara <span class="highlight">daring!</span></h1>
+                <div class="models">
+                    <img src="casual-life-3d-young-couple-sitting-on-the-floor-and-reading-books 1.png" alt="model simpatik">
+                </div>
                 <h5 class="credit">© 2024 SIMPATIK</h5>
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "msedge",
+            "name": "http://127.0.0.1:3000/Login%20Page/login.html",
+            "request": "launch",
+            "url": "http://127.0.0.1:3000/Login%20Page/login.html"
+        }
+    ]
+}
