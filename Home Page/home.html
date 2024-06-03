@@ -1,56 +1,80 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <link rel="stylesheet" href="ds-style.css">
-        <title>Dashboard</title>
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="ds-style.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="loading-overlay">
+        <div class="loader"></div>
+    </div>
 
-    <body>
-
-        <div class="header">
-            <div class="logo">
-                <img src="simpatik.png" alt="logo Simpatik">
-            </div>
-
-            <nav class="navbar">
-                <a href="" class="nav-link">Beranda</a>
-                <a href="" class="nav-link">Kategori</a>
-                <a href="" class="nav-link">Buku</a>
-                <a href="" class="nav-link">Tentang Kami</a>
-            </nav>
-            
-            <div class="right">
-                <a href="#">Sign Up</a>
-                <a href="#">Login</a>
-            </div>
+    <div class="header">
+        <div class="logo">
+            <img src="simpatik.png" alt="logo Simpatik">
         </div>
-
-        <div class="content">
-            <img src="https://via.placeholder.com/800x400" alt="Background Image">
-            <div class="search-box">
-                <input type="text" placeholder="Masukkan Kata Kunci ">
-                <button type="submit"><i class="fas fa-search"></i></button>
-            </div>
+        <nav class="navbar">
+            <a href="#beranda" class="nav-link">Beranda</a>
+            <a href="#kategori-populer" class="nav-link">Kategori</a>
+            <a href="#" class="nav-link">Rekomendasi</a>
+            <a href="#" class="nav-link">Terbaru</a>
+            <a href="#" class="nav-link">Tentang Kami</a>
+        </nav>
+        <div class="right">
+            <a href="#">Sign Up</a>
+            <a href="#">Login</a>
         </div>
-    
-        <div class="category">
-            <h2>Kategori Populer</h2>
-            <div class="category-grid">
-                <ul class="category-list">
-                    <li><a href="#">Category 1</a></li>
-                    <li><a href="#">Category 2</a></li>
-                    <!-- Add more categories here -->
-                </ul>
-              
-            </div>
+    </div>
+
+    <div class="content" id="beranda">
+        <div class="slider">
+            <div class="slide active" style="background-image: url('simpatik-removebg-preview.png');"></div>
+            <div class="slide" style="background-image: url('lib.png');"></div>
+            <div class="slide" style="background-image: url('simpatiktes.jpg');"></div>
         </div>
+        <div class="search-box">
+            <input type="text" placeholder="Mau cari buku apa?">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="toggle-buttons">
+            <button class="toggle-btn active" onclick="toggleSlide(0)"></button>
+            <button class="toggle-btn" onclick="toggleSlide(1)"></button>
+            <button class="toggle-btn" onclick="toggleSlide(2)"></button>
+        </div>
+    </div>    
 
+    <div class="category" id="kategori-populer">
+        <h2>Kategori Populer</h2>
+        <div class="category-grid">
+            <div class="category-item">
+                <div class="ct-img">
+                    <img src="Castle.png" alt="">
+                </div>
+                <p>Fiksi</p>
+            </div>
+            <div class="category-item">
+                
+            </div>
+            <div class="category-item">Category 3</div>
+            <div class="category-item more">Lainnya</div>
+        </div>
+        <div class="extra-categories">
+            <div class="category-item">Category 4</div>
+            <div class="category-item">Category 5</div>
+            <div class="category-item">Category 6</div>
+            <div class="category-item">Category 7</div>
+            <div class="category-item">Category 8</div>
+            <div class="category-item">Category 9</div>
+            <div class="category-item">Category 10</div>
+            <div class="category-item close-btn">Tutup</div>
+        </div>
+    </div>
 
-    </body>
-
-
+    <script src="script.js"></script>
+    <script src="loader.js"></script>
+    <script src="slider.js"></script>
+</body>
 </html>
-

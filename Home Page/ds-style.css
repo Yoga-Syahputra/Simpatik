@@ -3,26 +3,61 @@
     padding: 0;
 }
 
-body{
-    
-
+body {
+    font-family: 'Montserrat', sans-serif;
+    /* background-color: #175B85; */
+    color: #fff; /* Ensure text color is white to contrast with the dark background */
 }
 
-.header{
+/* Loading overlay styles */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #175B85; /* Semi-transparent black background */
+    z-index: 9999; /* Ensure it's on top of other elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Loader animation styles */
+.loader {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 3s linear infinite; /* Rotate animation */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     background-color: #175B85;
-    padding: 23px;    
+    padding: 23px;
+    z-index: 1000; /* Ensure the navbar stays on top of other content */
 }
 
-.header a{
+.header a {
     color: #fff;
-    font-size: 14px ;
+    font-size: 14px;
     text-decoration: none;
     font-size: 16px;
 }
+
 .right a:nth-of-type(2) {
-    margin-left: 30px; 
+    margin-left: 0px; 
     border: 2px solid #fff; 
     padding: 5px 25px;
     border-radius: 20px;
@@ -32,7 +67,6 @@ body{
     width: auto;
     height: 50px;
     background-color: #175B85;
-        
 }
 
 .navbar {
@@ -44,39 +78,75 @@ body{
     color: white;
     text-decoration: none;
     padding: 10px 15px;
-    transition: background-color 0.3s ease;
+    transition: color 0.3s ease; /* Add transition effect for color change */
+    position: relative; /* Position relative for pseudo-element */
+}
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: color 0.3s ease; /* Add transition effect for color change */
+    position: relative; /* Ensure position relative for pseudo-element */
 }
 
-.nav-link:hover {
-    background-color: #175B85;
-    border-radius: 5px;
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 10px; /* Adjust the position of the underline */
+    left: 0;
+    width: 0; /* Initial width of the underline */
+    height: 2px; /* Set the height of the underline */
+    background-color: white; /* Set the color of the underline */
+    transition: width 0.3s ease; /* Add transition effect for width change */
+}
+
+.nav-link:hover::after {
+    width: 100%; /* Expand the underline on hover */
 }
 
 .content {
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    background-image: url('lib.png');
     justify-content: center;
-    background-color: rgb(138, 132, 132);
-    padding: 100px;
+    background-color: #c0bdbd;
+    padding: 120px;
+    overflow: hidden;
 }
 
-.content img {
+.slider {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.slide {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    z-index: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
+
+.slide.active {
+    opacity: 1;
+}
+
 
 .search-box {
     position: relative;
-    z-index: 2; /* Agar kotak pencarian berada di atas gambar */
+    z-index: 2;
     background: white;
     padding: 5px 20px;
-    border-radius: 50px; /* Menambahkan border radius */
+    border-radius: 50px;
     display: flex;
     align-items: center;
     width: 300px;
@@ -88,59 +158,126 @@ body{
     border: none;
     border-radius: 5px;
     margin-right: 10px;
-    box-sizing: border-box; /* Untuk menghindari padding mempengaruhi lebar input */
-    outline: none; /* Menghilangkan outline */
+    box-sizing: border-box;
+    outline: none;
 }
 
 .search-box button {
     padding: 10px;
     border: none;
-    background: none; /* Menghapus background */
-    color: #ccc; /* Mengatur warna ikon */
+    background: none;
+    color: #ccc;
     border-radius: 50%;
-    /* cursor: pointer; */
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.toggle-buttons {
+    margin-top: 20px;
+}
+
+.toggle-btn {
+    width: 50px;
+    height: 12px;
+    border-radius: 5%;;
+    background-color: #ffffff;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-btn.active {
+    background-color: #175B85;
+}
+
+.category {
+    /* width: 100%; */
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    /* background-color: rgb(175, 167, 167); */
+    color: #000; /* Set text color for category section */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.category h2 {
+    margin-bottom: 40px;
+    margin-left: 70px;
+    color: #175B85; /* Ensure heading color matches theme */
+}
+
+.category-grid,
+.extra-categories {
+    display: flex;
+    grid-template-columns: repeat(4, 1fr); /* Ensure each row has 4 items */
+    gap: 20px; /* Adjust the gap between category items */
+    justify-content: space-around;
+    margin: auto;
+    /* background-color: azure; */
     
 }
 
-.search-box button i {
-    font-size: 16px;
-    margin-left: 60px;
+.category-item {
+    background-color: #175B85;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    height: 100px;
+    width: 120px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.category-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px; /* Adjust the gap between category items */
+.category-item a {
+    text-decoration: none;
+    color: inherit;
+    
 }
 
-.category-list,
-.more-categories {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.category-item:hover {
+    background-color: #e0e0e0;
 }
 
-.more-categories {
+.extra-categories {
     display: none; /* Initially hide the additional categories */
+    margin-top: 20px;
 }
 
-.show-more {
+.extra-categories.expanded {
+    display: grid;
+    
+}
+.extra-categories .category-item{
+    margin: auto;
+}
+.more {
     text-align: center;
     cursor: pointer;
-    color: #333;
+    color: #175B85;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
     transition: background-color 0.3s ease;
 }
 
-.show-more:hover {
+.more:hover {
     background-color: #f0f0f0;
 }
 
-.expanded .more-categories {
-    display: block; /* Show additional categories when expanded */
+.close-btn {
+    text-align: center;
+    cursor: pointer;
+    color: #175B85;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.close-btn:hover {
+    background-color: #f0f0f0;
 }
