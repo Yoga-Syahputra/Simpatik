@@ -146,6 +146,10 @@ body {
     border-top-right-radius: 20px; /* Rounded top-right corner */
     border-bottom-right-radius: 20px; 
 }
+.leftbox img{
+    width: 170px;
+
+}
 
 .rightbox {
     background-color: rgb(255, 255, 255); /* Background color for the right side */
@@ -222,19 +226,75 @@ body {
 
 .button-group {
     display: flex;
-    gap: 10px;
-}
+    flex-direction: column;
+    align-items: center;
+  }
+  
 
 .btn-baca, .btn-tambah {
-    background-color: #175B85;
+    background-color: #2ea76b;
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
+    margin-top: 10px;
     cursor: pointer;
+    width: 170px;
     transition: background-color 0.3s ease;
 }
 
 .btn-baca:hover, .btn-tambah:hover {
     background-color: #0D3C55;
 }
+
+.rating-stars {
+    margin-top: 10px;
+  }
+  
+  .rating-stars i {
+    cursor: pointer;
+    font-size: 18px;
+    margin-right: 5px;
+  }
+  
+  .rating-stars i:hover {
+    color: #f7dc6f;
+  }
+  
+  .rating-stars .fa-star {
+    color: #ccc;
+  }
+  
+  .rating-stars .fa-star:hover {
+    color: #f7dc6f;
+  }
+
+  .icon-buttons {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .icon-buttons button {
+    margin: 5px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .icon-buttons button:hover {
+    background-color: #ffffff;
+  }
+  
+  .icon-buttons i {
+    font-size: 18px;
+    margin-right: 5px;
+  }
+
+  .seperator {
+    border-top: 1px solid rgb(0, 0, 0);
+    margin-top: 15px;
+    width: 180px;
+  }
+  

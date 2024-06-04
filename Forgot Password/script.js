@@ -1,4 +1,3 @@
-// Ensure the modal is hidden by default
 document.addEventListener("DOMContentLoaded", function() {
     var modal = document.getElementById("notificationModal");
     modal.style.display = "none";
@@ -16,26 +15,35 @@ function togglePasswordVisibility() {
     }
 }
 
+function toggleNewPasswordVisibility() {
+    var passwordField = document.getElementById("new-password");
+    var togglePassword = document.getElementById("toggle-new-password");
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+        togglePassword.innerHTML = '<i class="material-icons">visibility_off</i>';
+    } else {
+        passwordField.type = "password";
+        togglePassword.innerHTML = '<i class="material-icons">visibility</i>';
+    }
+}
+
 function closeModal() {
     var modal = document.getElementById("notificationModal");
     modal.style.display = "none";
 }
 
-function login() {
+function resetPassword() {
     var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
+    var newPassword = document.getElementById("new-password").value;
 
-    // Replace with your actual username and password for testing
-    var validEmail = "test@example.com";
-    var validPassword = "password123";
-
-    if (email === validEmail && password === validPassword) {
-        showNotification("Selamat datang di Simpatik!");
+    // Placeholder for password reset logic
+    if (email && newPassword) {
+        showNotification("Password reset successful! You can now log in with your new password.");
         setTimeout(function() {
-            window.location.href = "/Home Page/home.html";
+            window.location.href = "login.html";
         }, 2000); // Redirect after 2 seconds
     } else {
-        showNotification("Username or password is incorrect. Please try again.");
+        showNotification("Please fill out all fields.");
     }
 }
 
