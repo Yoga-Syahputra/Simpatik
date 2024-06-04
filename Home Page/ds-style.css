@@ -37,6 +37,7 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
 .header {
     position: fixed;
     top: 0;
@@ -56,8 +57,13 @@ body {
     font-size: 16px;
 }
 
+.right{
+    /* background-color: #3498db; */
+    margin-top: 16px;
+    margin-right: 60px;
+}
 .right a:nth-of-type(2) {
-    margin-left: 0px; 
+    margin-left: 10px; 
     border: 2px solid #fff; 
     padding: 5px 25px;
     border-radius: 20px;
@@ -84,7 +90,7 @@ body {
 .nav-link {
     color: white;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 20px 15px;
     transition: color 0.3s ease; /* Add transition effect for color change */
     position: relative; /* Ensure position relative for pseudo-element */
 }
@@ -109,17 +115,17 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('lib.png');
     justify-content: center;
     background-color: #c0bdbd;
-    padding: 120px;
+    padding: 1px;
     overflow: hidden;
 }
 
 .slider {
     position: relative;
     width: 100%;
-    height: 200px;
+    height: 80vh; /* Make the slider take the full viewport height */
+    aspect-ratio: 16 / 9;
     overflow: hidden;
 }
 
@@ -129,31 +135,58 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+    filter: blur(2px); /* Apply blur effect to the slides */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire slide */
 }
 
 .slide.active {
     opacity: 1;
 }
 
+.title {
+    position: absolute;
+    top: 45%; /* Adjust the top value as needed */
+    transform: translateY(-50%);
+    z-index: 3;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff; /* Change color as needed */
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); ;
+    padding: 0 20px;
+}
+
+.title h1 {
+    font-size: 2.8em; /* Adjust the font size as needed */
+    margin: 0;
+}
 
 .search-box {
-    position: relative;
+    position: absolute;
     z-index: 2;
-    background: white;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
     padding: 5px 20px;
     border-radius: 50px;
     display: flex;
     align-items: center;
-    width: 300px;
+    width: 400px; /* Initial width */
+    transition: width 0.3s ease; /* Add transition for width change */
+    top: 60%; /* Position the search box in the middle */
+    transform: translateY(-50%); /* Center the search box vertically */
+}
+
+.search-box:hover {
+    width: 500px; /* Expand the width on hover */
 }
 
 .search-box input[type="text"] {
-    width: 300px;
+    width: 100%;
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -174,13 +207,18 @@ body {
 }
 
 .toggle-buttons {
-    margin-top: 20px;
+    position: absolute;
+    bottom: 20px;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .toggle-btn {
     width: 50px;
     height: 12px;
-    border-radius: 5%;;
+    border-radius: 5%;
     background-color: #ffffff;
     margin-right: 5px;
     cursor: pointer;
@@ -191,6 +229,39 @@ body {
     background-color: #175B85;
 }
 
+.slider-arrows {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    z-index: 1; /* Ensure the arrows are above the slider */
+}
+
+.arrow {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.arrow:hover {
+    color: #ccc; /* Change color on hover */
+}
+
+.prev {
+    margin-left: 20px;
+}
+
+.next {
+    margin-right: 20px;
+}
+
+
 .category {
     /* width: 100%; */
     max-width: 1200px;
@@ -198,14 +269,27 @@ body {
     padding: 20px;
     /* background-color: rgb(175, 167, 167); */
     color: #000; /* Set text color for category section */
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    justify-content: space-around;
+    color: #000; /* Set text color for category section */
+    border-bottom: 2px solid #175B85;
+
 }
 
+.icon{
+    display: flex;
+    margin-bottom: -10px;
+    margin-top: 30px;
+}
+.icon i {
+    font-size: 24px; /* Adjust the size of the icon */
+    color: #1C1C1C; /* Change the color of the icon */
+    margin-left: 75px;
+}
 .category h2 {
     margin-bottom: 40px;
-    margin-left: 70px;
-    color: #175B85; /* Ensure heading color matches theme */
+    margin-left: 16px;
+    color: #1C1C1C; 
+    text-shadow: 1px 2px 5px #000000b3;/* Ensure heading color matches theme */
 }
 
 .category-grid,
@@ -215,6 +299,7 @@ body {
     gap: 20px; /* Adjust the gap between category items */
     justify-content: space-around;
     margin: auto;
+    margin-bottom: 20px;
     /* background-color: azure; */
     
 }
@@ -229,6 +314,9 @@ body {
     width: 120px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
+
 }
 
 .category-item a {
@@ -237,18 +325,22 @@ body {
     
 }
 
+
 .category-item:hover {
     background-color: #e0e0e0;
+    color:#175B85;
 }
 
 .extra-categories {
     display: none; /* Initially hide the additional categories */
     margin-top: 20px;
+
 }
 
 .extra-categories.expanded {
     display: grid;
-    
+
+        
 }
 .extra-categories .category-item{
     margin: auto;
@@ -256,23 +348,22 @@ body {
 .more {
     text-align: center;
     cursor: pointer;
-    color: #175B85;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    color: #ffffff;
+    border-radius: 10px;
     padding: 10px;
     transition: background-color 0.3s ease;
 }
 
 .more:hover {
     background-color: #f0f0f0;
+    color: #175B85;
 }
 
 .close-btn {
     text-align: center;
     cursor: pointer;
-    color: #175B85;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    color: #ffffff;
+    border-radius: 10px;
     padding: 10px;
     transition: background-color 0.3s ease;
     margin-top: 10px;
@@ -280,4 +371,138 @@ body {
 
 .close-btn:hover {
     background-color: #f0f0f0;
+}
+
+.rekomendasi, .terbaru{
+    margin-top: 0px;
+
+    color: #000;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    /* background-color: rgb(175, 167, 167); */
+    color: #000; /* Set text color for category section */
+    /* border-radius: 10px; */
+    margin-bottom: 40px;
+    border-bottom: 2px solid #175B85;
+
+}
+
+.rekomendasi h2{
+    margin-left: 17px;
+    text-shadow: 1px 2px 5px #000000b3; 
+}
+
+.rekomendasi .icon a, .bt-rekomen a {
+    font-size: 14px;
+    display: inline-block;
+    padding: 3px 10px;
+    background-color: #175B85;
+    
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.rekomendasi a:hover {
+    background-color: #004085;
+    border-color: #004085;
+}
+
+.rekomendasi a:active {
+    background-color: #004080;
+    border-color: #004080;
+}
+.bt-rekomen{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 70px;
+}
+
+.book-container {
+    position: relative;
+    width: 125px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Menambahkan transisi untuk efek zoom dan shadow */
+}
+
+.book-container img {
+    width: 100%;
+    height: auto; /* Membuat gambar menyesuaikan dengan lebar container dan mempertahankan rasio aspek */
+    display: block;
+}
+
+.book-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.book-container:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+.book-container:hover .book-info {
+    transform: translateY(0);
+}
+
+.book-container a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.book-preview{
+    display: flex;
+    /* background-color: #3498db; */
+    justify-content: space-around;
+    margin: auto;
+    margin-bottom: 40px;
+    margin-top: 30px;
+}
+
+.book-preview h3{
+    font-size: 17px;
+
+}
+.terbaru .icon i{
+
+    margin-left: 75px;
+}
+.terbaru .icon h2{
+    color: #000;
+    margin-left: 17px;
+    text-shadow: 1px 2px 5px #000000b3;
+}
+
+.about-us{
+    margin-top: 0px;
+    color: #000;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #175B85;
+}
+
+.about-us h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em; /* Adjust font size as needed */
+    color: #175B85; /* Adjust text color as needed */
+    line-height: 1.2; /* Adjust line height for spacing between lines */
+    
 }

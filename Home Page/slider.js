@@ -57,4 +57,18 @@ document.addEventListener('DOMContentLoaded', function() {
             toggleSlide(index);
         });
     });
+
+    // Slider arrow functionality
+    const prevButton = document.querySelector('.arrow.prev');
+    const nextButton = document.querySelector('.arrow.next');
+
+    prevButton.addEventListener('click', function() {
+        const newIndex = (currentSlide - 1 + slides.length) % slides.length;
+        toggleSlide(newIndex);
+    });
+
+    nextButton.addEventListener('click', function() {
+        const newIndex = (currentSlide + 1) % slides.length;
+        toggleSlide(newIndex);
+    });
 });

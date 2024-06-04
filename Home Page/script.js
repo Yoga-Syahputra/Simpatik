@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         categoryGrid.removeChild(moreBtn);
         const newCategory = document.createElement('div');
         newCategory.classList.add('category-item');
-        newCategory.textContent = 'Category 4';
+        newCategory.textContent = 'Sejarah';
         categoryGrid.appendChild(newCategory);
     });
 
