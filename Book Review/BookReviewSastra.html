@@ -25,21 +25,21 @@
             </a>
         </div>
         <nav class="navbar">
-            <a href="#beranda" class="nav-link">Beranda</a>
-            <a href="#kategori-populer" class="nav-link">Kategori</a>
-            <a href="#" class="nav-link">Rekomendasi</a>
-            <a href="#" class="nav-link">Terbaru</a>
-            <a href="#" class="nav-link">Tentang Kami</a>
+            <a href="/Home Page/home.html" class="nav-link">Beranda</a>
+            <a href="/Home Page/home.html" class="nav-link">Kategori</a>
+            <a href="/Home Page/home.html" class="nav-link">Rekomendasi</a>
+            <a href="/Home Page/home.html" class="nav-link">Terbaru</a>
+            <a href="/Home Page/home.html" class="nav-link">Tentang Kami</a>
         </nav>
         <div class="right">
-            <a href="#">Sign Up</a>
-            <a href="#">Login</a>
+            <a href="/Register Page/Signup.html">Sign Up</a>
+            <a href="/Login Page/login.html">Login</a>
         </div>
     </div>
 
     <div class="container">
         <div class="leftbox">
-            <img src="../Home Page/Ghost Forest.jpg" alt="Gambar Buku" class="gambar-buku">
+            <img src="/Book Review/Book Cover/How to Read Literature Like a Professor.jpg" alt="Gambar Buku" class="gambar-buku">
             <div class="button-group">
                 <button class="btn-baca" id="open-pdf-btn">Baca</button>
                 <button class="btn-tambah">Tambahkan</button>
@@ -71,7 +71,7 @@
         <div class="rightbox">
             <h1 class="judul-buku">How to Read Literature Like a Professor: A Lively and Entertaining Guide to Reading Between the Lines</h1>
             <div class="genre-buttons">
-                <button class="genre-btn">Sastra</button>
+                <a href="/Kategori Page/Kategori sastra.html" class="genre-btn">Sastra</a>
             </div>
             <p class="nama-pembuat">Nama Penulis:  Thomas C. Foster</p>
             <p class="sinopsis">"Pengantar Teori Sastra" adalah buku klasik yang mengupas dasar-dasar teori dan kritik sastra. Ditulis oleh Rene Wellek dan Austin Warren, buku ini memberikan pengenalan menyeluruh tentang berbagai pendekatan dan konsep dalam studi sastra. Buku ini menguraikan topik-topik penting seperti genre sastra, struktur naratif, fungsi sastra, dan pendekatan-pendekatan kritis seperti formalisme, strukturalisme, dan lainnya. Dengan analisis yang mendalam dan jelas, buku ini menjadi rujukan utama bagi mahasiswa, akademisi, dan siapa saja yang tertarik pada studi sastra.</p>
@@ -80,7 +80,7 @@
                 ISBN : 978-0060009427 <br>
                 Bahasa: Inggris <br> 
             </p>
-            <button class="kembali-btn">Kembali</button>
+            <button class="kembali-btn" onclick="goBack()">Kembali</button>
         </div>
     </div>
 
@@ -94,12 +94,16 @@
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Silakan masuk ke akun Anda</p>
+            <p>Silakan masuk ke akun Anda.</p>
         </div>
     </div>
 
     <script src="loader.js"></script>
     <script>
+        function goBack() {
+        window.history.back();
+        }
+        
         document.addEventListener('DOMContentLoaded', function () {
             var openPdfBtn = document.getElementById('open-pdf-btn');
             var pdfModal = document.getElementById('pdfModal');

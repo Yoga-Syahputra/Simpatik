@@ -25,15 +25,15 @@
             </a>
         </div>
         <nav class="navbar">
-            <a href="#beranda" class="nav-link">Beranda</a>
-            <a href="#kategori-populer" class="nav-link">Kategori</a>
-            <a href="#" class="nav-link">Rekomendasi</a>
-            <a href="#" class="nav-link">Terbaru</a>
-            <a href="#" class="nav-link">Tentang Kami</a>
+            <a href="/Home Page/home.html" class="nav-link">Beranda</a>
+            <a href="/Home Page/home.html" class="nav-link">Kategori</a>
+            <a href="/Home Page/home.html" class="nav-link">Rekomendasi</a>
+            <a href="/Home Page/home.html" class="nav-link">Terbaru</a>
+            <a href="/Home Page/home.html" class="nav-link">Tentang Kami</a>
         </nav>
         <div class="right">
-            <a href="#">Sign Up</a>
-            <a href="#">Login</a>
+            <a href="/Register Page/Signup.html">Sign Up</a>
+            <a href="/Login Page/login.html">Login</a>
         </div>
     </div>
 
@@ -71,17 +71,17 @@
         <div class="rightbox">
             <h1 class="judul-buku">The God Delusion</h1>
             <div class="genre-buttons">
-                <button class="genre-btn">Agama</button>
-                <button class="genre-btn">Filsafat</button>
+                <a href="/Kategori Page/Kategori agama.html" class="genre-btn">Agama</a>
+                <a href="/Kategori Page/Kategori filsafat.html" class="genre-btn">Filsafat</a>
             </div>
-            <p class="nama-pembuat">Nama Penulis:Richard Dawkins</p>
+            <p class="nama-pembuat">Nama Penulis: Richard Dawkins</p>
             <p class="sinopsis">"The God Delusion" adalah sebuah buku karya Richard Dawkins, yang pertama kali diterbitkan pada tahun 2006. Dalam buku ini, Dawkins, seorang ahli biologi evolusi dan ateis terkemuka, mengajukan argumen bahwa keyakinan kepada Tuhan merupakan delusi dan tidak ada bukti ilmiah yang mendukung keberadaan Tuhan. Dawkins menjelaskan berbagai aspek agama, termasuk sejarah, moralitas, dan dampaknya pada masyarakat, serta mempromosikan pandangan dunia sekuler dan humanisme.</p>
             <p class="informasi_buku">Format: 398 halaman, Hardcover <br>
                 Dipublikasikan pada:2006 oleh Bantam Books   <br>
                 ISBN : 978-0618680009 <br>
                 Bahasa: Inggris <br> 
             </p>
-            <button class="kembali-btn">Kembali</button>
+            <button class="kembali-btn" onclick="goBack()">Kembali</button>
         </div>
     </div>
 
@@ -95,12 +95,16 @@
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Silakan masuk ke akun Anda</p>
+            <p>Silakan masuk ke akun Anda.</p>
         </div>
     </div>
 
     <script src="loader.js"></script>
     <script>
+        function goBack() {
+        window.history.back();
+        }
+        
         document.addEventListener('DOMContentLoaded', function () {
             var openPdfBtn = document.getElementById('open-pdf-btn');
             var pdfModal = document.getElementById('pdfModal');

@@ -25,21 +25,21 @@
             </a>
         </div>
         <nav class="navbar">
-            <a href="#beranda" class="nav-link">Beranda</a>
-            <a href="#kategori-populer" class="nav-link">Kategori</a>
-            <a href="#" class="nav-link">Rekomendasi</a>
-            <a href="#" class="nav-link">Terbaru</a>
-            <a href="#" class="nav-link">Tentang Kami</a>
+            <a href="/Home Page/home.html" class="nav-link">Beranda</a>
+            <a href="/Home Page/home.html" class="nav-link">Kategori</a>
+            <a href="/Home Page/home.html" class="nav-link">Rekomendasi</a>
+            <a href="/Home Page/home.html" class="nav-link">Terbaru</a>
+            <a href="/Home Page/home.html" class="nav-link">Tentang Kami</a>
         </nav>
         <div class="right">
-            <a href="#">Sign Up</a>
-            <a href="#">Login</a>
+            <a href="/Register Page/Signup.html">Sign Up</a>
+            <a href="/Login Page/login.html">Login</a>
         </div>
     </div>
 
     <div class="container">
         <div class="leftbox">
-            <img src="../Home Page/Ghost Forest.jpg" alt="Gambar Buku" class="gambar-buku">
+            <img src="/Book Review/Book Cover/The Invisable Man.jpg" alt="Gambar Buku" class="gambar-buku">
             <div class="button-group">
                 <button class="btn-baca" id="open-pdf-btn">Baca</button>
                 <button class="btn-tambah">Tambahkan</button>
@@ -69,19 +69,19 @@
             </div>
         </div>
         <div class="rightbox">
-            <h1 class="judul-buku">The Invinsible Man</h1>
+            <h1 class="judul-buku">The Invisable Man</h1>
             <div class="genre-buttons">
-                <button class="genre-btn">Horror</button>
-                <button class="genre-btn">Fiksi</button>
+                <a href="/Kategori Page/Kategori fiksi.html" class="genre-btn">Fiksi</a>
+                <a href="/Kategori Page/Kategori horror.html" class="genre-btn">Horor</a>
             </div>
-            <p class="nama-pembuat">Nama Penulis:H.G. Wells</p>
-            <p class="sinopsis">"The Invisible Man" adalah sebuah novel fiksi ilmiah karya H.G. Wells yang diterbitkan pada tahun 1897. Ceritanya berpusat pada seorang ilmuwan bernama Griffin yang menemukan cara untuk membuat dirinya tak terlihat melalui serangkaian eksperimen kimia. Namun, setelah menjadi tak terlihat, Griffin mulai kehilangan akal sehat dan menjadi berbahaya. Dia menggunakan kekuatannya untuk melakukan kejahatan dan menciptakan kekacauan, yang akhirnya mengarah pada pemburuannya oleh masyarakat yang ketakutan. Novel ini mengeksplorasi tema-tema seperti moralitas, isolasi, dan kegilaan yang timbul dari kekuatan yang tak terbatas.</p>
+            <p class="nama-pembuat">Nama Penulis: H.G. Wells</p>
+            <p class="sinopsis">"The Invisable Man" adalah sebuah novel fiksi ilmiah karya H.G. Wells yang diterbitkan pada tahun 1897. Ceritanya berpusat pada seorang ilmuwan bernama Griffin yang menemukan cara untuk membuat dirinya tak terlihat melalui serangkaian eksperimen kimia. Namun, setelah menjadi tak terlihat, Griffin mulai kehilangan akal sehat dan menjadi berbahaya. Dia menggunakan kekuatannya untuk melakukan kejahatan dan menciptakan kekacauan, yang akhirnya mengarah pada pemburuannya oleh masyarakat yang ketakutan. Novel ini mengeksplorasi tema-tema seperti moralitas, isolasi, dan kegilaan yang timbul dari kekuatan yang tak terbatas.</p>
             <p class="informasi_buku">Format: 297 halaman, Hardcover <br>
                 Dipublikasikan pada:1897 oleh C. Arthur Pearson   <br>
                 ISBN : 978-0618680009 <br>
                 Bahasa: Inggris <br> 
             </p>
-            <button class="kembali-btn">Kembali</button>
+            <button class="kembali-btn" onclick="goBack()">Kembali</button>
         </div>
     </div>
     
@@ -95,12 +95,16 @@
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Silakan masuk ke akun Anda</p>
+            <p>Silakan masuk ke akun Anda.</p>
         </div>
     </div>
 
     <script src="loader.js"></script>
     <script>
+        function goBack() {
+        window.history.back();
+      }
+      
         document.addEventListener('DOMContentLoaded', function () {
             var openPdfBtn = document.getElementById('open-pdf-btn');
             var pdfModal = document.getElementById('pdfModal');

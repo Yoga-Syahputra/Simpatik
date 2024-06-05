@@ -35,7 +35,7 @@ function login() {
             window.location.href = "/Home Page/home.html";
         }, 2000); // Redirect after 2 seconds
     } else {
-        showNotification("Alamat Email atau Kata Sandi salah. Mohon coba lagi.");
+        showNotification("Alamat email atau kata sandi salah. Mohon coba lagi.");
     }
 }
 

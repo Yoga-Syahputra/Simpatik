@@ -174,6 +174,8 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block; 
 }
 
 .genre-btn:hover {
@@ -204,11 +206,13 @@ body {
     bottom: 20px;
     right: 20px;
     background-color: #175B85;
+    font-family: 'Montserrat', sans-serif;
     color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    text-decoration: none;
     transition: background-color 0.3s ease;
 }
 
@@ -296,7 +300,6 @@ body {
     width: 180px;
   }
 
-/* Common styles for modals */
 .modal {
     display: none; 
     position: fixed; 
@@ -312,21 +315,20 @@ body {
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
-    margin: 5% auto; /* Reduced margin to make the modal larger */
+    margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 200%; /* Increased width */
-    height: 200%; /* Set height to 90% of the viewport */
-    max-width: 1200px; /* Optional max width for large screens */
+    width: 200%; 
+    height: 200%; 
+    max-width: 1200px; 
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     animation-name: modalopen;
     animation-duration: 0.5s;
 }
 
-/* Additional CSS to make sure iframe fills the modal */
 .modal-content iframe {
     width: 100%;
-    height: calc(100% - 40px); /* Subtract padding */
+    height: calc(100% - 40px); 
 }
 
 .close {
@@ -346,7 +348,6 @@ body {
     cursor: pointer;
 }
 
-/* Styling for pdfModal */
 #pdfModal .modal-content {
     background-color: #fefefe; 
     margin: 10% auto; 
@@ -360,27 +361,27 @@ body {
 }
 
 #pdfModal .close {
-    color: #333; /* Change close button color */
+    color: #333; 
 }
 
 #loginModal .modal-content {
-    background-color: #fefefe; /* Change background color */
-    color: rgb(0, 0, 0); /* Change text color */
-    text-align: center; /* Center-align text */
-    display: flex; /* Use flexbox for centering */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    flex-direction: column; /* Align content in a column */
-    max-width: 450px; /* Set maximum width */
-    max-height: 100px; /* Set maximum height */
-    position: fixed; /* Fixed position */
-    top: 30%; /* Position from the top */
-    left: 50%; /* Position from the left */
-    transform: translate(-50%, -50%); /* Center the modal */
+    background-color: #fefefe; 
+    color: rgb(0, 0, 0); 
+    text-align: center; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+    max-width: 450px; 
+    max-height: 100px; 
+    position: fixed; 
+    top: 30%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
 }
 
 #loginModal p {
     margin: 0;
-    padding: 10px 20px; /* Add padding for better appearance */
+    padding: 10px 20px; 
 }
 

@@ -1,24 +1,58 @@
 const books = [
-    "Harry Potter",
-    "Invisible Man",
-    "American Psycho",
-    "David Sedaris",
-    "Ghost Forest",
-    "More Than This",
-    "A Clockwork Orange",
-    "Sophie's World"
+    "Agama",
+    "Bahasa",
+    "Edukasi",
+    "Filsafat",
+    "Geografi",
+    "Horor",
+    "Kesenian"
 ];
 
-const bookDetailURLs = [
-    "BookReviewHarry.html",
-    "invisible_man_detail.html",
-    "../Book Review/BookReviewAmerican.html",
-    "david_sedaris_detail.html",
-    "../Book Review/BookReviewGhost.html",
-    "more_than_this_detail.html",
-    "a_clockwork_orange_detail.html",
-    "../Book Review/BookReviewFilsafat.html"
-];
+const bookDetailMap = {
+    "Agama": {
+        url: "/Book Review/BookReviewAgama.html",
+        author: "Richard Dawkins",
+        judul: "The God Delusion",
+        category : "Agama"
+    },
+    "Bahasa": {
+        url: "/Book Review/BookReviewBahasa.html",
+        author: "John H. McWhorter",
+        judul: "The Power of Babel",
+        category : "Bahasa"
+    },
+    "Edukasi": {
+        url: "/Book Review/BookReviewEdukasi.html",
+        author: "Sir Ken Robinson",
+        judul: "The Element",
+        category : "Edukasi"
+    },
+    "Filsafat": {
+        url: "/Book Review/BookReviewFilsafat.html",
+        author: "Jostein Gaarder",
+        judul: "Sophie's World",
+        category: "Filsafat"
+    },
+    "Geografi": {
+        url: "/Book Review/BookReviewGeografi.html",
+        author: "Tim Marshall",
+        judul: "Prisoners of Geography",
+        category : "Geografi"
+    },
+    "Horor": {
+        url: "/Book Review/BookReviewHorror.html",
+        author: "H.G. Wells",
+        judul: "The Invisable Man",
+        category: "Horror"
+    },
+    "Kesenian": {
+        url: "/Book Review/BookReviewSeni.html",
+        author: "E.H. Gombrich",
+        judul: "The Story of Art",
+        category: "Sastra"
+    }
+};
+
 
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
@@ -30,32 +64,32 @@ function displayResults(results) {
     resultsContainer.innerHTML = '';
 
     if (results.length === 0) {
-        resultsContainer.innerHTML = '<p>No results found</p>';
+        resultsContainer.innerHTML =  '<p style="margin-left: 90px; font-weight: bold; font-size:20px;">No results found</p>';
     } else {
         results.forEach(book => {
-            const detailURL = bookDetailURLs[books.indexOf(book)];
+            const detail = bookDetailMap[book];
             resultsContainer.innerHTML += `
                 <div class="book-preview">
                     <div class="book-container">
-                        <a href="#">
-                            <img src="../Home Page/${book}.jpg" alt="${book}">
+                        <a href="${detail.url}">
+                            <img src="../Book Review/Book Cover/${detail.judul}.jpg" alt="${detail.judul}">
                             <div class="book-info">
-                                <h3>${book}</h3>
+                                <h3>${detail.judul}</h3>
                             </div>
                         </a>
                     </div>
                     <div class="information">
-                        <h2>${book.toUpperCase()} AND THE SORCERER'S STONE</h2>
-                        <p style="margin-top: 10px;">Oleh JK Rowling</p>
+                        <h2>${detail.judul}</h2>
+                        <p style="margin-top: 10px;">Oleh ${detail.author}</p>
                         <div class="sub-info">
-                            <p>Fiksi</p>
-                            <p>Sastra</p>
+                            <p>${detail.category}</p>
+                            
                         </div>
                         <div class="star">
                             <i class="fas fa-star" style="color: #FBBC05"></i>
                             <p>4</p>    
                         </div>
-                        <a href="${detailURL}">SELENGKAPNYA</a>
+                        <a href="${detail.url}">SELENGKAPNYA</a>
                     </div>
                 </div>
             `;
@@ -63,8 +97,9 @@ function displayResults(results) {
     }
 }
 
+
 document.addEventListener('DOMContentLoaded', function() {
     const query = getQueryParam('query').toLowerCase();
-    const results = books.filter(book => book.toLowerCase().includes(query.toLowerCase()));
+    const results = books.filter(book => book.toLowerCase().includes(query));
     displayResults(results);
 });

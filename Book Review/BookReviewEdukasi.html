@@ -25,21 +25,21 @@
             </a>
         </div>
         <nav class="navbar">
-            <a href="#beranda" class="nav-link">Beranda</a>
-            <a href="#kategori-populer" class="nav-link">Kategori</a>
-            <a href="#" class="nav-link">Rekomendasi</a>
-            <a href="#" class="nav-link">Terbaru</a>
-            <a href="#" class="nav-link">Tentang Kami</a>
+            <a href="/Home Page/home.html" class="nav-link">Beranda</a>
+            <a href="/Home Page/home.html" class="nav-link">Kategori</a>
+            <a href="/Home Page/home.html" class="nav-link">Rekomendasi</a>
+            <a href="/Home Page/home.html" class="nav-link">Terbaru</a>
+            <a href="/Home Page/home.html" class="nav-link">Tentang Kami</a>
         </nav>
         <div class="right">
-            <a href="#">Sign Up</a>
-            <a href="#">Login</a>
+            <a href="/Register Page/Signup.html">Sign Up</a>
+            <a href="/Login Page/login.html">Login</a>
         </div>
     </div>
 
     <div class="container">
         <div class="leftbox">
-            <img src="" alt="Gambar Buku" class="gambar-buku">
+            <img src="/Book Review/Book Cover/The Element.jpg" alt="Gambar Buku" class="gambar-buku">
             <div class="button-group">
                 <button class="btn-baca" id="open-pdf-btn">Baca</button>
                 <button class="btn-tambah">Tambahkan</button>
@@ -71,17 +71,16 @@
         <div class="rightbox">
             <h1 class="judul-buku">The Element: How Finding Your Passion Changes Everything</h1>
             <div class="genre-buttons">
-                <button class="genre-btn">Edukasi</button>
-
+                <a href="/Kategori Page/Kategori edukasi.html" class="genre-btn">Edukasi</a>
             </div>
-            <p class="nama-pembuat">Nama Penulis:Sir Ken Robinson, PhD</p>
+            <p class="nama-pembuat">Nama Penulis: Sir Ken Robinson, PhD</p>
             <p class="sinopsis">"The Element: How Finding Your Passion Changes Everything" adalah buku yang menginspirasi tentang pentingnya menemukan dan mengikuti passion dalam kehidupan kita. Ditulis oleh Sir Ken Robinson, seorang pakar pendidikan terkenal, buku ini membawa pembaca dalam perjalanan yang mengubah hidup, menjelajahi konsep "the element" - tempat di mana bakat alami dan minat yang mendalam bertemu. Robinson berbagi kisah-kisah inspiratif dari orang-orang yang menemukan passion mereka dan mencapai kesuksesan luar biasa dalam berbagai bidang, mulai dari seni dan bisnis hingga ilmu pengetahuan dan pendidikan. Dengan pandangan yang tajam dan gaya penceritaan yang memikat, buku ini merangsang pembaca untuk menjelajahi diri mereka sendiri, menemukan apa yang membuat mereka bersemangat, dan mengejar impian mereka dengan penuh semangat.</p>
             <p class="informasi_buku">Format: 446 halaman, Hardcover <br>
                 Dipublikasikan pada:Januari 2009 oleh Viking Adult  <br>
                 ISBN : 978-0670020478 <br>
                 Bahasa: Inggris <br> 
             </p>
-            <button class="kembali-btn">Kembali</button>
+            <button class="kembali-btn" onclick="goBack()">Kembali</button>
         </div>
     </div>
 
@@ -95,12 +94,16 @@
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Silakan masuk ke akun Anda</p>
+            <p>Silakan masuk ke akun Anda.</p>
         </div>
     </div>
 
     <script src="loader.js"></script>
     <script>
+        function goBack() {
+        window.history.back();
+        }
+        
         document.addEventListener('DOMContentLoaded', function () {
             var openPdfBtn = document.getElementById('open-pdf-btn');
             var pdfModal = document.getElementById('pdfModal');

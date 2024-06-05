@@ -23,15 +23,15 @@
             </a>
         </div>
         <nav class="navbar">
-            <a href="#beranda" class="nav-link">Beranda</a>
-            <a href="#kategori-populer" class="nav-link">Kategori</a>
-            <a href="#" class="nav-link">Rekomendasi</a>
-            <a href="#" class="nav-link">Terbaru</a>
-            <a href="#" class="nav-link">Tentang Kami</a>
+            <a href="/Home Page/home.html" class="nav-link">Beranda</a>
+            <a href="/Home Page/home.html" class="nav-link">Kategori</a>
+            <a href="/Home Page/home.html" class="nav-link">Rekomendasi</a>
+            <a href="/Home Page/home.html" class="nav-link">Terbaru</a>
+            <a href="/Home Page/home.html" class="nav-link">Tentang Kami</a>
         </nav>
         <div class="right">
-            <a href="#">Sign Up</a>
-            <a href="#">Login</a>
+            <a href="/Register Page/Signup.html">Sign Up</a>
+            <a href="/Login Page/login.html">Login</a>
         </div>
     </div>
 
@@ -68,8 +68,8 @@
         <div class="rightbox">
             <h1 class="judul-buku">American Psycho</h1>
             <div class="genre-buttons">
-                <button class="genre-btn">Fiksi</button>
-                <button class="genre-btn">Horror</button>
+                <a href="/Kategori Page/Kategori fiksi.html" class="genre-btn">Fiksi</a>
+                <a href="/Kategori Page/Kategori horror.html" class="genre-btn">Horor</a>
             </div>
             <p class="nama-pembuat">Nama Penulis: Bret Easton Ellis</p>
             <p class="sinopsis">"American Psycho" adalah sebuah novel karya Bret Easton Ellis yang diterbitkan pada tahun 1991. Ceritanya mengikuti kehidupan Patrick Bateman, seorang eksekutif bank investasi di New York City yang tampan, kaya, dan juga seorang pembunuh berantai. Melalui narasi Bateman, novel ini mengeksplorasi ketidakpekaan masyarakat modern, konsumerisme ekstrem, dan kekerasan. Bateman menjalani kehidupan ganda, di mana ia melakukan kejahatan keji di malam hari sambil mempertahankan fasad sempurna di siang hari. Novel ini terkenal karena deskripsinya yang eksplisit tentang kekerasan dan satir sosial yang tajam.</p>
@@ -78,7 +78,7 @@
                 ISBN : 978-0679735779 <br>
                 Bahasa: Inggris <br> 
             </p>
-            <button class="kembali-btn">Kembali</button>
+            <button class="kembali-btn" onclick="goBack()">Kembali</button>
         </div>
     </div>
 
@@ -92,12 +92,16 @@
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Silakan masuk ke akun Anda</p>
+            <p>Silakan masuk ke akun Anda.</p>
         </div>
     </div>
 
     <script src="loader.js"></script>
     <script>
+        function goBack() {
+            window.history.back();
+        }
+        
         document.addEventListener('DOMContentLoaded', function () {
             var openPdfBtn = document.getElementById('open-pdf-btn');
             var pdfModal = document.getElementById('pdfModal');

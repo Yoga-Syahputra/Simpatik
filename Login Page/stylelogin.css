@@ -210,12 +210,39 @@ input[type="email"], input[type="password"] {
 .forgot-password a {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
-    color: #175B85;
+    color: #000000;
     text-decoration: none;
 }
 
 .forgot-password a:hover {
     text-decoration: underline;
+}
+
+.remember-me {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #000000;
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.forgot-remember-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.forgot-password {
+    text-align: left;
+}
+
+.remember-me {
+    text-align: right;
 }
 
 .credit {

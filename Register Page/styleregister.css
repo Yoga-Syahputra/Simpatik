@@ -64,7 +64,7 @@ body {
 .email, .password {
     color: #000;
     text-align: left;
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 14px;
 }

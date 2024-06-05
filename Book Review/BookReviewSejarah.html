@@ -25,21 +25,21 @@
             </a>
         </div>
         <nav class="navbar">
-            <a href="#beranda" class="nav-link">Beranda</a>
-            <a href="#kategori-populer" class="nav-link">Kategori</a>
-            <a href="#" class="nav-link">Rekomendasi</a>
-            <a href="#" class="nav-link">Terbaru</a>
-            <a href="#" class="nav-link">Tentang Kami</a>
+            <a href="/Home Page/home.html" class="nav-link">Beranda</a>
+            <a href="/Home Page/home.html" class="nav-link">Kategori</a>
+            <a href="/Home Page/home.html" class="nav-link">Rekomendasi</a>
+            <a href="/Home Page/home.html" class="nav-link">Terbaru</a>
+            <a href="/Home Page/home.html" class="nav-link">Tentang Kami</a>
         </nav>
         <div class="right">
-            <a href="#">Sign Up</a>
-            <a href="#">Login</a>
+            <a href="/Register Page/Signup.html">Sign Up</a>
+            <a href="/Login Page/login.html">Login</a>
         </div>
     </div>
 
     <div class="container">
         <div class="leftbox">
-            <img src="../Home Page/Ghost Forest.jpg" alt="Gambar Buku" class="gambar-buku">
+            <img src="/Book Review/Book Cover/A People's History of the United States.jpg" alt="Gambar Buku" class="gambar-buku">
             <div class="button-group">
                 <button class="btn-baca" id="open-pdf-btn">Baca</button>
                 <button class="btn-tambah">Tambahkan</button>
@@ -71,16 +71,16 @@
         <div class="rightbox">
             <h1 class="judul-buku">A People's History of the United States</h1>
             <div class="genre-buttons">
-                <button class="genre-btn">Sejarah</button>
+                <a href="/Kategori Page/Kategori sejarah.html" class="genre-btn">Sejarah</a>
             </div>
-            <p class="nama-pembuat">Nama Penulis:Howard Zinn</p>
+            <p class="nama-pembuat">Nama Penulis: Howard Zinn</p>
             <p class="sinopsis">"A People's History of the United States" adalah sebuah buku karya Howard Zinn yang pertama kali diterbitkan pada tahun 1980. Buku ini menawarkan perspektif sejarah Amerika Serikat dari sudut pandang kelompok-kelompok yang sering diabaikan dalam buku-buku sejarah arus utama, seperti pekerja, perempuan, orang kulit berwarna, dan kelompok-kelompok lain yang tertindas. Melalui pendekatan naratif dan analisis yang mendalam, Zinn mengeksplorasi berbagai peristiwa sejarah dengan fokus pada perjuangan sosial dan politik yang telah membentuk negara tersebut.</p>
             <p class="informasi_buku">Format: 768 halaman, Hardcover <br>
                 Dipublikasikan pada: 1980 oleh Harper & Row <br>
                 ISBN :  978-0062397348 <br>
                 Bahasa: Inggris <br> 
             </p>
-            <button class="kembali-btn">Kembali</button>
+            <button class="kembali-btn" onclick="goBack()">Kembali</button>
         </div>
     </div>
 
@@ -94,12 +94,16 @@
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Silakan masuk ke akun Anda</p>
+            <p>Silakan masuk ke akun Anda.</p>
         </div>
     </div>
 
     <script src="loader.js"></script>
     <script>
+        function goBack() {
+        window.history.back();
+        }
+        
         document.addEventListener('DOMContentLoaded', function () {
             var openPdfBtn = document.getElementById('open-pdf-btn');
             var pdfModal = document.getElementById('pdfModal');

@@ -25,15 +25,15 @@
             </a>
         </div>
         <nav class="navbar">
-            <a href="#beranda" class="nav-link">Beranda</a>
-            <a href="#kategori-populer" class="nav-link">Kategori</a>
-            <a href="#" class="nav-link">Rekomendasi</a>
-            <a href="#" class="nav-link">Terbaru</a>
-            <a href="#" class="nav-link">Tentang Kami</a>
+            <a href="/Home Page/home.html" class="nav-link">Beranda</a>
+            <a href="/Home Page/home.html" class="nav-link">Kategori</a>
+            <a href="/Home Page/home.html" class="nav-link">Rekomendasi</a>
+            <a href="/Home Page/home.html" class="nav-link">Terbaru</a>
+            <a href="/Home Page/home.html" class="nav-link">Tentang Kami</a>
         </nav>
         <div class="right">
-            <a href="#">Sign Up</a>
-            <a href="#">Login</a>
+            <a href="/Register Page/Signup.html">Sign Up</a>
+            <a href="/Login Page/login.html">Login</a>
         </div>
     </div>
 
@@ -71,8 +71,8 @@
         <div class="rightbox">
             <h1 class="judul-buku">The Power of Babel: A Natural History of Language</h1>
             <div class="genre-buttons">
-                <button class="genre-btn">Bahasa</button>
-                <button class="genre-btn">Sejarah</button>
+                <a href="/Kategori Page/Kategori bahasa.html" class="genre-btn">Bahasa</a>
+                <a href="/Kategori Page/Kategori sejarah.html" class="genre-btn">Sejarah</a>
             </div>
             <p class="nama-pembuat">Nama Penulis: John H. McWhorter</p>
             <p class="sinopsis">"The Power of Babel: A Natural History of Language" adalah buku yang ditulis oleh John H. McWhorter, seorang ahli linguistik terkemuka. Buku ini mengeksplorasi bagaimana bahasa berkembang, berubah, dan bercabang selama ribuan tahun. McWhorter mengungkapkan sejarah alamiah bahasa dengan cara yang menarik dan mudah diakses, menunjukkan bagaimana bahasa manusia bukanlah sistem statis tetapi terus berkembang dan beradaptasi. Buku ini membahas berbagai aspek linguistik, termasuk pidgin, kreol, dan evolusi bahasa modern dari akar yang kuno.</p>
@@ -81,7 +81,7 @@
                 ISBN : 978-0060520854 <br>
                 Bahasa: Inggris <br> 
             </p>
-            <button class="kembali-btn">Kembali</button>
+            <button class="kembali-btn" onclick="goBack()">Kembali</button>
         </div>
     </div>
 
@@ -95,12 +95,16 @@
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Silakan masuk ke akun Anda</p>
+            <p>Silakan masuk ke akun Anda.</p>
         </div>
     </div>
 
     <script src="loader.js"></script>
     <script>
+        function goBack() {
+        window.history.back();
+        }
+        
         document.addEventListener('DOMContentLoaded', function () {
             var openPdfBtn = document.getElementById('open-pdf-btn');
             var pdfModal = document.getElementById('pdfModal');

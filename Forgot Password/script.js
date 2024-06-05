@@ -37,22 +37,22 @@ function resetPassword() {
     var newPassword = document.getElementById("new-password").value;
 
     if (!validateEmail(email)) {
-        showNotification("Please enter a valid email address.");
+        showNotification("Silakan isi alamat email yang valid.");
         return;
     }
 
     if (!validatePassword(newPassword)) {
-        showNotification("Password must be at least 8 characters long and include a number and a special character.");
+        showNotification("Kata sandi harus terdiri dari minimal 8 karakter dan menyertakan angka serta karakter khusus.");
         return;
     }
 
     if (email && newPassword) {
-        showNotification("Password reset successful! You can now log in with your new password.");
+        showNotification("Reset kata sandi berhasil! Anda sekarang dapat masuk dengan kata sandi baru Anda.");
         setTimeout(function() {
             window.location.href = "/Login Page/login.html";
         }, 2000); // Redirect after 2 seconds
     } else {
-        showNotification("Please fill out all fields.");
+        showNotification("Silakan isi semua kolom.");
     }
 }
 
