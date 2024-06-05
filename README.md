@@ -1,4 +1,4 @@
-# Simpatik - A library Website Submitted for the Final Project on the Course Human and Computer Interaction 📚
+# Simpatik - A Library Website Submitted for the Final Project on the Course Human and Computer Interaction 📚
 
 Welcome to Simpatik, your go-to platform for accessing a vast collection of books across various genres and topics. Dive into the world of literature with ease and discover captivating stories, insightful knowledge, and endless possibilities. 🌟
 
