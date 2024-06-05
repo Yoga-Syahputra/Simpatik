@@ -5,7 +5,9 @@ const books = [
     "Filsafat",
     "Geografi",
     "Horor",
-    "Kesenian"
+    "Kesenian,"
+    "Sejarah,"
+
 ];
 
 const bookDetailMap = {
@@ -23,8 +25,8 @@ const bookDetailMap = {
     },
     "Edukasi": {
         url: "/Book Review/BookReviewEdukasi.html",
-        author: "Sir Ken Robinson",
-        judul: "The Element",
+        author: "Sir Ken Robinson, PhD",
+        judul: "The Element: How Finding Your Passion Changes Everything ",
         category : "Edukasi"
     },
     "Filsafat": {
@@ -43,16 +45,27 @@ const bookDetailMap = {
         url: "/Book Review/BookReviewHorror.html",
         author: "H.G. Wells",
         judul: "The Invisable Man",
-        category: "Horror"
+        category: "Horor"
     },
     "Kesenian": {
         url: "/Book Review/BookReviewSeni.html",
         author: "E.H. Gombrich",
         judul: "The Story of Art",
+        category: "Seni"
+    },
+    "Sastra": {
+        url: "/Book Review/BookReviewSastra.html",
+        author: "Thomas C. Foster",
+        judul: "How to Read Literature Like a Professor: A Lively and Entertaining Guide to Reading Between the Lines",
         category: "Sastra"
+    },
+    "Sejarah": {
+        url: "/Book Review/BookReviewSejarah.html",
+        author: "Howard Zinn",
+        judul: "A People's History of the United States",
+        category: "Sejarah"
     }
 };
-
 
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
