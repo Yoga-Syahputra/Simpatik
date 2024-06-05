@@ -5,7 +5,8 @@ const books = [
     "David Sedaris",
     "Ghost Forest",
     "More Than This",
-    "A Clockwork Orange"
+    "A Clockwork Orange",
+    "Sophie's World"
 ];
 
 const bookDetailURLs = [
@@ -15,7 +16,8 @@ const bookDetailURLs = [
     "david_sedaris_detail.html",
     "../Book Review/BookReviewGhost.html",
     "more_than_this_detail.html",
-    "a_clockwork_orange_detail.html"
+    "a_clockwork_orange_detail.html",
+    "../Book Review/BookReviewFilsafat.html"
 ];
 
 function getQueryParam(param) {
