@@ -16,10 +16,6 @@ Welcome to Simpatik, your go-to platform for accessing a vast collection of book
 3. **Read**: Access digital copies of books instantly and start reading right away.
 4. **Discover**: Explore personalized recommendations to discover new books based on your reading preferences.
 
-
-## Contact Us 📧
-For inquiries or assistance, feel free to reach out to us at [info@simpatiklibrary.com](mailto:info@simpatiklibrary.com). We're here to help!
-
 Happy reading! 📚
 
 *Simpatik Team*
