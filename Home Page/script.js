@@ -74,6 +74,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
         // Append the new category div to the category grid
         categoryGrid.appendChild(newCategory);
+
+        newCategory.addEventListener('click', function() {
+            window.location.href = '/Kategori Page/Kategori Sejarah.html'; // Ganti dengan URL halaman tujuan
+        });
     });
 
     closeBtn.addEventListener('click', function() {

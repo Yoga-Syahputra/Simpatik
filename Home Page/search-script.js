@@ -3,10 +3,12 @@ const books = [
     "Bahasa",
     "Edukasi",
     "Filsafat",
+    "Fiksi",
     "Geografi",
     "Horor",
-    "Kesenian,"
-    "Sejarah,"
+    "Kesenian",
+    "Sastra",
+    "Sejarah"
 
 ];
 
@@ -26,8 +28,14 @@ const bookDetailMap = {
     "Edukasi": {
         url: "/Book Review/BookReviewEdukasi.html",
         author: "Sir Ken Robinson, PhD",
-        judul: "The Element: How Finding Your Passion Changes Everything ",
+        judul: "The Element",
         category : "Edukasi"
+    },
+    "Fiksi": {
+        url: "/Book Review/BookReviewFiksi.html",
+        author: "H.G. Wells",
+        judul: "The Invisable Man",
+        category: "Fiksi"
     },
     "Filsafat": {
         url: "/Book Review/BookReviewFilsafat.html",
@@ -56,7 +64,7 @@ const bookDetailMap = {
     "Sastra": {
         url: "/Book Review/BookReviewSastra.html",
         author: "Thomas C. Foster",
-        judul: "How to Read Literature Like a Professor: A Lively and Entertaining Guide to Reading Between the Lines",
+        judul: "How to Read Literature Like a Professor",
         category: "Sastra"
     },
     "Sejarah": {
