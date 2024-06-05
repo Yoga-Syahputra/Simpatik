@@ -23,7 +23,7 @@ body {
 
 .loader {
     border: 8px solid #f3f3f3; 
-    border-top: 8px solid #3498db; 
+    border-top: 8px solid #175B85; 
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -55,9 +55,18 @@ body {
 }
 
 .right{
-    margin-top: 16px;
+    margin-top: 10px;
     margin-right: 60px;
 }
+.right a {
+    position: relative;
+    text-decoration: none;
+    color: inherit; /* Memastikan warna teks diwariskan */
+    padding: 10px 20px;
+    border: 2px solid transparent; /* Membuat border default tidak terlihat */
+    display: inline-block; /* Memastikan elemen dapat memiliki posisi relatif */
+}
+
 .right a:nth-of-type(2) {
     margin-left: 10px; 
     border: 2px solid #fff; 
@@ -72,6 +81,8 @@ body {
     border-color: #333;
     transform: scale(1.1);
 }
+
+
 
 .logo img {
     width: auto;
@@ -210,6 +221,7 @@ body {
     justify-content: center;
 }
 
+
 .toggle-buttons {
     position: absolute;
     bottom: 20px;
@@ -305,7 +317,7 @@ body {
     
 }
 
-.category-item {
+.category-item  {
     background-color: #175B85;
     color: #fff;
     padding: 10px;
@@ -316,7 +328,10 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -550,10 +565,8 @@ body {
     }
 }
 
-
-/* CSS for the pop-up section */
 .popup {
-    display: none;
+    display: none; /* Hide the popup by default */
     position: fixed;
     top: 50%;
     left: 50%;
@@ -563,11 +576,59 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    animation: popup-fade-in 0.5s ease forwards; /* Animasi fade-in saat popup muncul */
 }
-
 .popup-content {
     text-align: center;
+    opacity: 1; /* Set opasitas menjadi 1 agar konten terlihat */
 }
+
+.popup-content h2 {
+    font-size: 24px; /* Ukuran font yang lebih besar untuk judul */
+    margin-bottom: 20px; /* Jarak bawah antara judul dan daftar anggota */
+}
+
+.popup-content ul {
+    list-style-type: none; /* Hilangkan bullet point */
+    padding: 0;
+}
+
+.popup-content ul li {
+    margin-bottom: 10px; /* Jarak antara setiap anggota tim */
+    font-size: 18px; /* Ukuran font yang lebih besar untuk daftar anggota */
+}
+
+.popup-content p {
+    margin-top: 20px; /* Jarak antara daftar anggota tim dan judul program studi */
+    font-weight: bold; /* Membuat judul program studi tebal */
+}
+
+.popup-content button {
+    background-color: #175B85; /* Warna latar belakang tombol */
+    color: #fff; /* Warna teks tombol */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.popup-content button:hover {
+    background-color: #123c59; /* Warna latar belakang tombol saat dihover */
+}
+
+/* Animasi fade-in untuk popup */
+@keyframes popup-fade-in {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
 
 /* CSS for the button */
 #show-popup-btn {
@@ -639,3 +700,18 @@ body {
 .socialIcons a:hover i{
     color: white;
     transition: 0.3s;
+}
+
+.ct-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.ct-img img {
+    max-width: 100%;
+    max-height: 100%;
+}

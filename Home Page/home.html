@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMlI1HDxFz5b5hS0yvoYTDxz0fS1RxDOxAjwbuA" crossorigin="anonymous">
     <link rel="stylesheet" href="ds-style.css">
-    <title>Dashboard</title>
+    <link rel="icon" href="simpatik.png" type="image/x-icon" />
+    <title>Simpatik</title>
 </head>
 <body>
     <div class="loading-overlay">
@@ -45,7 +47,7 @@
                 <img src="oreki chitanda.png" alt="Slide 2">
             </div>
             <div class="slide">
-                <img src="simpatiktes.jpg" alt="Slide 3">
+                <img src="Library.jpg" alt="Slide 3">
             </div>
         </div>
         
@@ -54,8 +56,8 @@
         </div>
         
         <div class="search-box">
-            <input type="text" placeholder="Mau cari buku apa?">
-            <button type="submit"><i class="fas fa-search"></i></button>
+            <input type="text" id="search-input" placeholder="Mau cari buku apa?">
+            <button type="button" onclick="searchBooks()"><i class="fas fa-search"></i></button>
         </div>
         
         <div class="toggle-buttons">
@@ -78,25 +80,25 @@
         <div class="category-grid">
             <div class="category-item">
                 <div class="ct-img">
-                    <img src="Castle.png" alt="">
+                    <img src="/Home Page/Kategori/Fiksi.png" alt="">
                 </div>
                 <p>Fiksi</p>
             </div>
             <div class="category-item">
                 <div class="ct-img">
-                    <img src="#" alt="">
+                    <img src="/Home Page/Kategori/Edukasi.png" alt="">
                 </div>
                 <p>Edukasi</p>
             </div>
             <div class="category-item">
                 <div class="ct-img">
-                    <img src="#" alt="">
+                    <img src="/Home Page/Kategori/Sastra.png" alt="">
                 </div>
                 <p>Sastra</p>
             </div>
             <div class="category-item more">
                 <div class="ct-img">
-                    <img src="#" alt="">
+                    <img src="/Home Page/Kategori/" alt="">
                 </div>
                 <p>Lainnya</p>
             </div>
@@ -104,49 +106,49 @@
         <div class="extra-categories">
             <div class="category-item">
                 <div class="ct-img">
-                    <img src="#" alt="">
+                    <img src="/Home Page/Kategori/Bahasa.png" alt="">
                 </div>
                 <p>Bahasa</p>
             </div>
             <div class="category-item">
                 <div class="ct-img">
-                    <img src="#" alt="">
+                    <img src="/Home Page/Kategori/Filsafat.png" alt="">
                 </div>
                 <p>Filsafat</p>
             </div>
             <div class="category-item">
                 <div class="ct-img">
-                    <img src="#" alt="">
+                    <img src="/Home Page/Kategori/Agama.png" alt="">
                 </div>
                 <p>Agama</p>
             </div>
             <div class="category-item">
                 <div class="ct-img">
-                    <img src="#" alt="">
+                    <img src="/Home Page/Kategori/Ilmu Sosial.png" alt="">
                 </div>
                 <p>Ilmu Sosial</p>
             </div>
             <div class="category-item">
                 <div class="ct-img">
-                    <img src="#" alt="">
+                    <img src="/Home Page/Kategori/Horor.png" alt="">
                 </div>
                 <p>Horor</p>
             </div>
             <div class="category-item">
                 <div class="ct-img">
-                    <img src="#" alt="">
+                    <img src="/Home Page/Kategori/Geografi.png" alt="">
                 </div>
                 <p>Geografi</p>
             </div>
             <div class="category-item">
                 <div class="ct-img">
-                    <img src="#" alt="">
+                    <img src="/Home Page/Kategori/Kesenian.png" alt="">
                 </div>
                 <p>Kesenian</p>
             </div>
             <div class="category-item close-btn">
                 <div class="ct-img">
-                    <img src="#" alt="">
+                    <img src="/Home Page/Kategori/Tutup.png" alt="">
                 </div>
                 <p>Tutup</p>
             </div>
@@ -264,16 +266,22 @@
             </div>
         </div>
 
-    <div class="popup" id="popup">
-        <div class="popup-content">
-            <h2>Tim Kami</h2>
-            <!-- Add content for your team section here -->
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <button class="close-btn" id="close-btn">Tutup</button>
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <h2>Tim Kami</h2>
+                <!-- Daftar anggota tim -->
+                <ul>
+                    <li>Muhammad Syafiq Haiqal - 2101020033</li>
+                    <li>Syiaruddin - 2101020086</li>
+                    <li>Kelvin Amzani Pasha - 2101020091</li> 
+                    <li>Yoga Syahputra - 2101020105</li>
+                    <li>Taufik Hidayat Sianturi - 2101020114</li>
+                </ul>
+                <p>Teknik Informatika - Universitas Maritim Raja Ali Haji</p>
+                <button class="close-btn" id="close-btn">Tutup</button>
+            </div>
         </div>
-</div>
 
-<!-- Add this button to trigger the pop-up -->
 <button id="show-popup-btn">Tampilkan Tim Kami</button>
 
     </div>

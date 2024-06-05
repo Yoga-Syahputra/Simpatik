@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="bk-style.css">
+    <title>Book Review</title>
+    <style>
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 9999; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            animation-name: modalopen;
+            animation-duration: 0.5s;
+        }
+
+        /* Modal Animation */
+        @keyframes modalopen {
+            from {opacity: 0}
+            to {opacity: 1}
+        }
+
+        /* Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loading-overlay">
+        <div class="loader"></div>
+    </div>
+
+    <div class="header">
+        <div class="logo">
+            <a href="/Home Page/home.html">
+                <img src="simpatik.png" alt="logo Simpatik">
+            </a>
+        </div>
+        <nav class="navbar">
+            <a href="#beranda" class="nav-link">Beranda</a>
+            <a href="#kategori-populer" class="nav-link">Kategori</a>
+            <a href="#" class="nav-link">Rekomendasi</a>
+            <a href="#" class="nav-link">Terbaru</a>
+            <a href="#" class="nav-link">Tentang Kami</a>
+        </nav>
+        <div class="right">
+            <a href="#">Sign Up</a>
+            <a href="#">Login</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="leftbox">
+            <img src="../Home Page/Ghost Forest.jpg" alt="Gambar Buku" class="gambar-buku">
+            <div class="button-group">
+                <button class="btn-baca" id="open-pdf-btn">Baca</button>
+                <button class="btn-tambah">Tambahkan</button>
+                <div class="rating-stars">
+                    <i class="fas fa-star" style="color: #f7dc6f"></i>
+                    <i class="fas fa-star" style="color: #f7dc6f"></i>
+                    <i class="fas fa-star" style="color: #f7dc6f"></i>
+                    <i class="fas fa-star" style="color: #ccc"></i>
+                    <i class="fas fa-star" style="color: #ccc"></i>
+                </div>
+                <hr class="seperator">
+                <div class="icon-buttons">
+                    <button class="btn-review">
+                        <i class="fas fa-comment"></i><br>
+                        Ulasan
+                    </button>
+                    <button class="btn-note">
+                        <i class="fas fa-pencil-alt"></i><br>
+                        Catatan
+                    </button>
+                    <button class="btn-share">
+                        <i class="fas fa-share"></i><br>
+                        Bagikan
+                    </button>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="rightbox">
+            <h1 class="judul-buku">American Psycho</h1>
+            <div class="genre-buttons">
+                <button class="genre-btn">Fiksi</button>
+                <button class="genre-btn">Horror</button>
+            </div>
+            <p class="nama-pembuat">Nama Penulis: Bret Easton Ellis</p>
+            <p class="sinopsis">"American Psycho" adalah sebuah novel karya Bret Easton Ellis yang diterbitkan pada tahun 1991. Ceritanya mengikuti kehidupan Patrick Bateman, seorang eksekutif bank investasi di New York City yang tampan, kaya, dan juga seorang pembunuh berantai. Melalui narasi Bateman, novel ini mengeksplorasi ketidakpekaan masyarakat modern, konsumerisme ekstrem, dan kekerasan. Bateman menjalani kehidupan ganda, di mana ia melakukan kejahatan keji di malam hari sambil mempertahankan fasad sempurna di siang hari. Novel ini terkenal karena deskripsinya yang eksplisit tentang kekerasan dan satir sosial yang tajam.</p>
+            <p class="informasi_buku">Format: 399 halaman, Hardcover <br>
+                Dipublikasikan pada: Maret 1991 oleh Vintage Books <br>
+                ISBN : 978-0679735779 <br>
+                Bahasa: Inggris <br> </p>
+        </div>
+    </div>
+
+    <!-- Modal for PDF viewer -->
+    <div id="pdfModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe id="pdf-viewer-iframe" src="" width="100%" height="100%"></iframe>
+        </div>
+    </div>
+
+    <script src="loader.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var openPdfBtn = document.getElementById('open-pdf-btn');
+            var pdfModal = document.getElementById('pdfModal');
+            var pdfViewerIframe = document.getElementById('pdf-viewer-iframe');
+
+            // Function to open PDF in modal popup
+            function openPdfInModal(pdfUrl) {
+                // Display the modal
+                pdfModal.style.display = "block";
+                // Set the source of the iframe to the PDF URL
+                pdfViewerIframe.src = pdfUrl;
+            }
+
+            // Close the modal when the close button is clicked
+            document.getElementsByClassName('close')[0].onclick = function () {
+                pdfModal.style.display = "none";
+            }
+
+            // Close the modal when clicking outside the modal content
+            window.onclick = function (event) {
+                if (event.target == pdfModal) {
+                    pdfModal.style.display = "none";
+                }
+            }
+
+            // Event listener for the "Baca" button
+            openPdfBtn.addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent the default form submission behavior
+                // Replace 'path/to/your/pdf/file.pdf' with the actual path to your PDF file
+                var pdfUrl = '/Book Review//Book/American_Psycho_by_Bret_Easton_Ellis.pdf';
+                openPdfInModal(pdfUrl);
+            });
+        });
+    </script>
+
+</body>
+</html>
