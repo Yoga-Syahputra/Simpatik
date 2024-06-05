@@ -105,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-
 // Smooth scrolling for navbar links
 document.addEventListener('DOMContentLoaded', function() {
     const navbarLinks = document.querySelectorAll('.navbar a');
@@ -123,6 +122,40 @@ document.addEventListener('DOMContentLoaded', function() {
                     behavior: 'smooth'
                 });
             }
+        });
+    });
+});
+
+//Toggle automatic sliders animation
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.slide');
+    const toggleBtns = document.querySelectorAll('.toggle-btn');
+    let currentIndex = 0;
+    const intervalTime = 3000; // Time in milliseconds
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+
+        toggleBtns.forEach((btn, i) => {
+            btn.classList.toggle('active', i === index);
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    let slideInterval = setInterval(nextSlide, intervalTime);
+
+    toggleBtns.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+            clearInterval(slideInterval);
+            showSlide(index);
+            currentIndex = index;
+            slideInterval = setInterval(nextSlide, intervalTime);
         });
     });
 });
