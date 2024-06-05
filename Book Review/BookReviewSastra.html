@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="bk-style.css">
+    <title>Book Review</title>
+    <link rel="icon" href="../Home Page/ikon-simpatik.jpg" type="image/x-icon" />
+</head>
+
+<body>
+    <div class="loading-overlay">
+        <div class="loader"></div>
+    </div>
+
+    <div class="header">
+        <div class="logo">
+            <a href="/Home Page/home.html">
+                <img src="simpatik.png" alt="logo Simpatik">
+            </a>
+        </div>
+        <nav class="navbar">
+            <a href="#beranda" class="nav-link">Beranda</a>
+            <a href="#kategori-populer" class="nav-link">Kategori</a>
+            <a href="#" class="nav-link">Rekomendasi</a>
+            <a href="#" class="nav-link">Terbaru</a>
+            <a href="#" class="nav-link">Tentang Kami</a>
+        </nav>
+        <div class="right">
+            <a href="#">Sign Up</a>
+            <a href="#">Login</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="leftbox">
+            <img src="../Home Page/Ghost Forest.jpg" alt="Gambar Buku" class="gambar-buku">
+            <div class="button-group">
+                <button class="btn-baca" id="open-pdf-btn">Baca</button>
+                <button class="btn-tambah">Tambahkan</button>
+                <div class="rating-stars">
+                    <i class="fas fa-star" style="color: #f7dc6f"></i>
+                    <i class="fas fa-star" style="color: #f7dc6f"></i>
+                    <i class="fas fa-star" style="color: #f7dc6f"></i>
+                    <i class="fas fa-star" style="color: #f7dc6f"></i>
+                    <i class="fas fa-star" style="color: #ccc"></i>
+                </div>
+                <hr class="seperator">
+                <div class="icon-buttons">
+                    <button class="btn-review">
+                        <i class="fas fa-comment"></i><br>
+                        Ulasan
+                    </button>
+                    <button class="btn-note">
+                        <i class="fas fa-pencil-alt"></i><br>
+                        Catatan
+                    </button>
+                    <button class="btn-share">
+                        <i class="fas fa-share"></i><br>
+                        Bagikan
+                    </button>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="rightbox">
+            <h1 class="judul-buku">How to Read Literature Like a Professor: A Lively and Entertaining Guide to Reading Between the Lines</h1>
+            <div class="genre-buttons">
+                <button class="genre-btn">Sastra</button>
+            </div>
+            <p class="nama-pembuat">Nama Penulis:  Thomas C. Foster</p>
+            <p class="sinopsis">"Pengantar Teori Sastra" adalah buku klasik yang mengupas dasar-dasar teori dan kritik sastra. Ditulis oleh Rene Wellek dan Austin Warren, buku ini memberikan pengenalan menyeluruh tentang berbagai pendekatan dan konsep dalam studi sastra. Buku ini menguraikan topik-topik penting seperti genre sastra, struktur naratif, fungsi sastra, dan pendekatan-pendekatan kritis seperti formalisme, strukturalisme, dan lainnya. Dengan analisis yang mendalam dan jelas, buku ini menjadi rujukan utama bagi mahasiswa, akademisi, dan siapa saja yang tertarik pada studi sastra.</p>
+            <p class="informasi_buku">Format: 156 halaman, Hardcover <br>
+                Dipublikasikan pada: Februari 2003 oleh Harper Perennial <br>
+                ISBN : 978-0060009427 <br>
+                Bahasa: Inggris <br> 
+            </p>
+            <button class="kembali-btn">Kembali</button>
+        </div>
+    </div>
+
+    <div id="pdfModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe id="pdf-viewer-iframe" src="" width="100%" height="100%"></iframe>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Silakan masuk ke akun Anda</p>
+        </div>
+    </div>
+
+    <script src="loader.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var openPdfBtn = document.getElementById('open-pdf-btn');
+            var pdfModal = document.getElementById('pdfModal');
+            var pdfViewerIframe = document.getElementById('pdf-viewer-iframe');
+            var loginModal = document.getElementById('loginModal');
+            var loginModalClose = document.getElementsByClassName('close');
+
+            function openPdfInModal(pdfUrl) {
+                pdfModal.style.display = "block";
+                pdfViewerIframe.src = pdfUrl;
+            }
+
+            function showLoginModal() {
+                loginModal.style.display = "block";
+            }
+
+            for (var i = 0; i < loginModalClose.length; i++) {
+                loginModalClose[i].onclick = function () {
+                    pdfModal.style.display = "none";
+                    loginModal.style.display = "none";
+                }
+            }
+
+            window.onclick = function (event) {
+                if (event.target == pdfModal) {
+                    pdfModal.style.display = "none";
+                } else if (event.target == loginModal) {
+                    loginModal.style.display = "none";
+                }
+            }
+
+            openPdfBtn.addEventListener('click', function (event) {
+                event.preventDefault();
+                var pdfUrl = '/Book Review//Book/American_Psycho_by_Bret_Easton_Ellis.pdf';
+                openPdfInModal(pdfUrl);
+            });
+
+            var btnTambah = document.querySelector('.btn-tambah');
+            var ratingStars = document.querySelector('.rating-stars');
+            var btnReview = document.querySelector('.btn-review');
+            var btnNote = document.querySelector('.btn-note');
+            var btnShare = document.querySelector('.btn-share');
+
+            btnTambah.addEventListener('click', showLoginModal);
+            ratingStars.addEventListener('click', showLoginModal);
+            btnReview.addEventListener('click', showLoginModal);
+            btnNote.addEventListener('click', showLoginModal);
+            btnShare.addEventListener('click', showLoginModal);
+        });
+    </script>
+
+</body>
+</html>

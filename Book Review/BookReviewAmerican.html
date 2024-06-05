@@ -7,59 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="bk-style.css">
-    <title>Book Review</title>
-    <style>
-        /* Modal styles */
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 9999; /* Sit on top */
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-        }
-
-        /* Modal Content/Box */
-        .modal-content {
-            background-color: #fefefe;
-            margin: 10% auto; /* 15% from the top and centered */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%; /* Could be more or less, depending on screen size */
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-            animation-name: modalopen;
-            animation-duration: 0.5s;
-        }
-
-        /* Modal Animation */
-        @keyframes modalopen {
-            from {opacity: 0}
-            to {opacity: 1}
-        }
-
-        /* Close Button */
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
+    <title>American Psycho</title>
+    <link rel="icon" href="../Home Page/ikon-simpatik.jpg" type="image/x-icon" />
 </head>
-
 <body>
     <div class="loading-overlay">
         <div class="loader"></div>
@@ -111,7 +62,6 @@
                         <i class="fas fa-share"></i><br>
                         Bagikan
                     </button>
-                    
                 </div>
             </div>
         </div>
@@ -126,15 +76,23 @@
             <p class="informasi_buku">Format: 399 halaman, Hardcover <br>
                 Dipublikasikan pada: Maret 1991 oleh Vintage Books <br>
                 ISBN : 978-0679735779 <br>
-                Bahasa: Inggris <br> </p>
+                Bahasa: Inggris <br> 
+            </p>
+            <button class="kembali-btn">Kembali</button>
         </div>
     </div>
 
-    <!-- Modal for PDF viewer -->
     <div id="pdfModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <iframe id="pdf-viewer-iframe" src="" width="100%" height="100%"></iframe>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Silakan masuk ke akun Anda</p>
         </div>
     </div>
 
@@ -144,36 +102,51 @@
             var openPdfBtn = document.getElementById('open-pdf-btn');
             var pdfModal = document.getElementById('pdfModal');
             var pdfViewerIframe = document.getElementById('pdf-viewer-iframe');
+            var loginModal = document.getElementById('loginModal');
+            var loginModalClose = document.getElementsByClassName('close');
 
-            // Function to open PDF in modal popup
             function openPdfInModal(pdfUrl) {
-                // Display the modal
                 pdfModal.style.display = "block";
-                // Set the source of the iframe to the PDF URL
                 pdfViewerIframe.src = pdfUrl;
             }
 
-            // Close the modal when the close button is clicked
-            document.getElementsByClassName('close')[0].onclick = function () {
-                pdfModal.style.display = "none";
+            function showLoginModal() {
+                loginModal.style.display = "block";
             }
 
-            // Close the modal when clicking outside the modal content
-            window.onclick = function (event) {
-                if (event.target == pdfModal) {
+            for (var i = 0; i < loginModalClose.length; i++) {
+                loginModalClose[i].onclick = function () {
                     pdfModal.style.display = "none";
+                    loginModal.style.display = "none";
                 }
             }
 
-            // Event listener for the "Baca" button
+            window.onclick = function (event) {
+                if (event.target == pdfModal) {
+                    pdfModal.style.display = "none";
+                } else if (event.target == loginModal) {
+                    loginModal.style.display = "none";
+                }
+            }
+
             openPdfBtn.addEventListener('click', function (event) {
-                event.preventDefault(); // Prevent the default form submission behavior
-                // Replace 'path/to/your/pdf/file.pdf' with the actual path to your PDF file
+                event.preventDefault();
                 var pdfUrl = '/Book Review//Book/American_Psycho_by_Bret_Easton_Ellis.pdf';
                 openPdfInModal(pdfUrl);
             });
+
+            var btnTambah = document.querySelector('.btn-tambah');
+            var ratingStars = document.querySelector('.rating-stars');
+            var btnReview = document.querySelector('.btn-review');
+            var btnNote = document.querySelector('.btn-note');
+            var btnShare = document.querySelector('.btn-share');
+
+            btnTambah.addEventListener('click', showLoginModal);
+            ratingStars.addEventListener('click', showLoginModal);
+            btnReview.addEventListener('click', showLoginModal);
+            btnNote.addEventListener('click', showLoginModal);
+            btnShare.addEventListener('click', showLoginModal);
         });
     </script>
-
 </body>
 </html>

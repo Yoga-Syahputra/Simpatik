@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="bk-style.css">
+    <title>Book Review</title>
+    <link rel="icon" href="../Home Page/ikon-simpatik.jpg" type="image/x-icon" />
+</head>
+
+<body>
+    <div class="loading-overlay">
+        <div class="loader"></div>
+    </div>
+
+    <div class="header">
+        <div class="logo">
+            <a href="/Home Page/home.html">
+                <img src="simpatik.png" alt="logo Simpatik">
+            </a>
+        </div>
+        <nav class="navbar">
+            <a href="#beranda" class="nav-link">Beranda</a>
+            <a href="#kategori-populer" class="nav-link">Kategori</a>
+            <a href="#" class="nav-link">Rekomendasi</a>
+            <a href="#" class="nav-link">Terbaru</a>
+            <a href="#" class="nav-link">Tentang Kami</a>
+        </nav>
+        <div class="right">
+            <a href="#">Sign Up</a>
+            <a href="#">Login</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="leftbox">
+            <img src="../Home Page/Ghost Forest.jpg" alt="Gambar Buku" class="gambar-buku">
+            <div class="button-group">
+                <button class="btn-baca" id="open-pdf-btn">Baca</button>
+                <button class="btn-tambah">Tambahkan</button>
+                <div class="rating-stars">
+                    <i class="fas fa-star" style="color: #f7dc6f"></i>
+                    <i class="fas fa-star" style="color: #f7dc6f"></i>
+                    <i class="fas fa-star" style="color: #f7dc6f"></i>
+                    <i class="fas fa-star" style="color: #f7dc6f"></i>
+                    <i class="fas fa-star" style="color: #ccc"></i>
+                </div>
+                <hr class="seperator">
+                <div class="icon-buttons">
+                    <button class="btn-review">
+                        <i class="fas fa-comment"></i><br>
+                        Ulasan
+                    </button>
+                    <button class="btn-note">
+                        <i class="fas fa-pencil-alt"></i><br>
+                        Catatan
+                    </button>
+                    <button class="btn-share">
+                        <i class="fas fa-share"></i><br>
+                        Bagikan
+                    </button>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="rightbox">
+            <h1 class="judul-buku">The Element: How Finding Your Passion Changes Everything</h1>
+            <div class="genre-buttons">
+                <button class="genre-btn">Edukasi</button>
+
+            </div>
+            <p class="nama-pembuat">Nama Penulis:Sir Ken Robinson, PhD</p>
+            <p class="sinopsis">"The Element: How Finding Your Passion Changes Everything" adalah buku yang menginspirasi tentang pentingnya menemukan dan mengikuti passion dalam kehidupan kita. Ditulis oleh Sir Ken Robinson, seorang pakar pendidikan terkenal, buku ini membawa pembaca dalam perjalanan yang mengubah hidup, menjelajahi konsep "the element" - tempat di mana bakat alami dan minat yang mendalam bertemu. Robinson berbagi kisah-kisah inspiratif dari orang-orang yang menemukan passion mereka dan mencapai kesuksesan luar biasa dalam berbagai bidang, mulai dari seni dan bisnis hingga ilmu pengetahuan dan pendidikan. Dengan pandangan yang tajam dan gaya penceritaan yang memikat, buku ini merangsang pembaca untuk menjelajahi diri mereka sendiri, menemukan apa yang membuat mereka bersemangat, dan mengejar impian mereka dengan penuh semangat.</p>
+            <p class="informasi_buku">Format: 446 halaman, Hardcover <br>
+                Dipublikasikan pada:Januari 2009 oleh Viking Adult  <br>
+                ISBN : 978-0670020478 <br>
+                Bahasa: Inggris <br> 
+            </p>
+            <button class="kembali-btn">Kembali</button>
+        </div>
+    </div>
+
+    <div id="pdfModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe id="pdf-viewer-iframe" src="" width="100%" height="100%"></iframe>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Silakan masuk ke akun Anda</p>
+        </div>
+    </div>
+
+    <script src="loader.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var openPdfBtn = document.getElementById('open-pdf-btn');
+            var pdfModal = document.getElementById('pdfModal');
+            var pdfViewerIframe = document.getElementById('pdf-viewer-iframe');
+            var loginModal = document.getElementById('loginModal');
+            var loginModalClose = document.getElementsByClassName('close');
+
+            function openPdfInModal(pdfUrl) {
+                pdfModal.style.display = "block";
+                pdfViewerIframe.src = pdfUrl;
+            }
+
+            function showLoginModal() {
+                loginModal.style.display = "block";
+            }
+
+            for (var i = 0; i < loginModalClose.length; i++) {
+                loginModalClose[i].onclick = function () {
+                    pdfModal.style.display = "none";
+                    loginModal.style.display = "none";
+                }
+            }
+
+            window.onclick = function (event) {
+                if (event.target == pdfModal) {
+                    pdfModal.style.display = "none";
+                } else if (event.target == loginModal) {
+                    loginModal.style.display = "none";
+                }
+            }
+
+            openPdfBtn.addEventListener('click', function (event) {
+                event.preventDefault();
+                var pdfUrl = '/Book Review//Book/Edukasi.pdf';
+                openPdfInModal(pdfUrl);
+            });
+
+            var btnTambah = document.querySelector('.btn-tambah');
+            var ratingStars = document.querySelector('.rating-stars');
+            var btnReview = document.querySelector('.btn-review');
+            var btnNote = document.querySelector('.btn-note');
+            var btnShare = document.querySelector('.btn-share');
+
+            btnTambah.addEventListener('click', showLoginModal);
+            ratingStars.addEventListener('click', showLoginModal);
+            btnReview.addEventListener('click', showLoginModal);
+            btnNote.addEventListener('click', showLoginModal);
+            btnShare.addEventListener('click', showLoginModal);
+        });
+    </script>
+
+</body>
+</html>

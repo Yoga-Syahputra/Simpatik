@@ -95,43 +95,43 @@ body {
 .nav-link::after {
     content: '';
     position: absolute;
-    bottom: 5px; /* Adjust the position of the underline */
+    bottom: 5px; 
     left: 0;
-    width: 0; /* Initial width of the underline */
-    height: 2px; /* Set the height of the underline */
-    background-color: white; /* Set the color of the underline */
-    transition: width 0.3s ease; /* Add transition effect for width change */
+    width: 0; 
+    height: 2px;
+    background-color: white; 
+    transition: width 0.3s ease; 
 }
 
 .nav-link:hover::after {
-    width: 100%; /* Expand the underline on hover */
+    width: 100%; 
 }
 
 .container {
-    width: 1300px; /* Adjust the width as needed */
-    height: 550px; /* Adjust the height as needed */
+    width: 1300px; 
+    height: 550px; 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 20px; /* Optional: to add rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: to add a shadow */
-    background-color: white; /* Background color for the container */
-    z-index: 999; /* Ensure container is above other content */
-    padding: 20px; /* Add padding inside the container */
+    border-radius: 20px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    background-color: white; 
+    z-index: 999; 
+    padding: 20px; 
 }
 
 .rightbox {
-    width: 70%; /* Each box takes up approximately half of the container */
-    height: 100%; /* Ensure the boxes are the full height of the container */
-    padding: 20px; /* Optional: add padding for content */
+    width: 70%; 
+    height: 100%; 
+    padding: 20px; 
     display: flex;
     justify-content: left;
     flex-direction: column;
 }
 .leftbox {
-    width: 30%; /* Each box takes up approximately half of the container */
-    height: 100%; /* Ensure the boxes are the full height of the container */
-    padding: 20px; /* Optional: add padding for content */
+    width: 30%; 
+    height: 100%; 
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -139,10 +139,9 @@ body {
 
 .leftbox {
     border: 2px solid rgb(186, 186, 186);
-    /* Background color for the left side */
-    border-top-left-radius: 20px; /* Rounded top-left corner */
-    border-bottom-left-radius: 20px; /* Rounded bottom-left corner */
-    border-top-right-radius: 20px; /* Rounded top-right corner */
+    border-top-left-radius: 20px; 
+    border-bottom-left-radius: 20px; 
+    border-top-right-radius: 20px; 
     border-bottom-right-radius: 20px; 
 }
 .leftbox img{
@@ -151,9 +150,9 @@ body {
 }
 
 .rightbox {
-    background-color: rgb(255, 255, 255); /* Background color for the right side */
-    border-top-right-radius: 20px; /* Rounded top-right corner */
-    border-bottom-right-radius: 20px; /* Rounded bottom-right corner */
+    background-color: rgb(255, 255, 255); 
+    border-top-right-radius: 20px; 
+    border-bottom-right-radius: 20px;
     position: relative;
 }
 
@@ -162,9 +161,9 @@ body {
 }
 
 .genre-buttons {
-    margin-top: 20px; /* Space between title and buttons */
+    margin-top: 20px; 
     display: flex;
-    gap: 10px; /* Space between buttons */
+    gap: 10px; 
 }
 
 .genre-btn {
@@ -204,7 +203,7 @@ body {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    background-color: #3498db;
+    background-color: #175B85;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -218,8 +217,8 @@ body {
 }
 
 .gambar-buku {
-    width: 200px; /* Sesuaikan dengan ukuran gambar yang Anda miliki */
-    height: auto; /* Menjaga proporsi gambar */
+    width: 200px; 
+    height: auto;
     margin-bottom: 20px;
 }
 
@@ -297,32 +296,38 @@ body {
     width: 180px;
   }
 
-  /* Modal styles */
+/* Common styles for modals */
 .modal {
-    display: none; /* Hide the modal by default */
-    position: fixed; /* Position the modal */
-    z-index: 1000; /* Ensure the modal is above other content */
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Enable scrolling if needed */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5); 
 }
 
+/* Modal Content/Box */
 .modal-content {
-    background-color: #fefefe; /* White background for modal content */
-    margin: 10% auto; /* Center the modal more vertically and horizontally */
+    background-color: #fefefe;
+    margin: 5% auto; /* Reduced margin to make the modal larger */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Set the width of the modal content */
-    max-width: 600px; /* Optional: set max-width for larger screens */
-    border-radius: 10px;
-    position: relative; /* Ensure relative positioning for close button */
-    height: 80%; /* Adjust the height of the modal content */
+    width: 200%; /* Increased width */
+    height: 200%; /* Set height to 90% of the viewport */
+    max-width: 1200px; /* Optional max width for large screens */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: modalopen;
+    animation-duration: 0.5s;
 }
 
-
+/* Additional CSS to make sure iframe fills the modal */
+.modal-content iframe {
+    width: 100%;
+    height: calc(100% - 40px); /* Subtract padding */
+}
 
 .close {
     position: absolute;
@@ -341,4 +346,41 @@ body {
     cursor: pointer;
 }
 
-  
+/* Styling for pdfModal */
+#pdfModal .modal-content {
+    background-color: #fefefe; 
+    margin: 10% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 250%; 
+    max-width: 1000px;
+    border-radius: 10px;
+    position: relative; 
+    height: 80%; 
+}
+
+#pdfModal .close {
+    color: #333; /* Change close button color */
+}
+
+#loginModal .modal-content {
+    background-color: #fefefe; /* Change background color */
+    color: rgb(0, 0, 0); /* Change text color */
+    text-align: center; /* Center-align text */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    flex-direction: column; /* Align content in a column */
+    max-width: 450px; /* Set maximum width */
+    max-height: 100px; /* Set maximum height */
+    position: fixed; /* Fixed position */
+    top: 30%; /* Position from the top */
+    left: 50%; /* Position from the left */
+    transform: translate(-50%, -50%); /* Center the modal */
+}
+
+#loginModal p {
+    margin: 0;
+    padding: 10px 20px; /* Add padding for better appearance */
+}
+

@@ -78,7 +78,7 @@ body {
 
 .login-box {
     width: 575px;
-    height: 525px; /* Increased height */
+    height: 525px; 
     display: flex;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -184,10 +184,9 @@ input[type="email"], input[type="password"] {
 }
 
 .custom-input {
-    /* Add your custom styling here */
     border: 1px solid #ccc;
     border-radius: 4px;
-    padding: 10px 40px 10px 10px; /* Add padding for the icon */
+    padding: 10px 40px 10px 10px; 
     width: 100%;
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
@@ -252,9 +251,8 @@ input[type="email"], input[type="password"] {
     margin: 0 10px;
 }
 
-/* Modal styles */
 .modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;

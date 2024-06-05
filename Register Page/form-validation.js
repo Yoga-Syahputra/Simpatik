@@ -14,22 +14,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Perform validation
         if (!validateEmail(email)) {
-            showNotification('Please enter a valid email address.');
+            showNotification('Masukkan email yang valid.');
             return;
         }
 
         if (!validatePassword(password)) {
-            showNotification('Password must be at least 8 characters long and include a number and a special character.');
+            showNotification('Kata sandi harus terdiri dari minimal 8 karakter dan menyertakan angka serta karakter khusus.');
             return;
         }
 
         if (password !== confirmPassword) {
-            showNotification('Passwords do not match.');
+            showNotification('Kata sandi tidak cocok.');
             return;
         }
 
         // If all validations pass, you can submit the form or perform further actions here
-        showNotification('Form submitted successfully!');
+        showNotification('Formulir berhasil dikirimkan!');
         registrationForm.reset(); // Optionally, reset the form after submission
     });
 

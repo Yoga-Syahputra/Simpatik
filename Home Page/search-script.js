@@ -8,6 +8,16 @@ const books = [
     "A Clockwork Orange"
 ];
 
+const bookDetailURLs = [
+    "BookReviewHarry.html",
+    "invisible_man_detail.html",
+    "../Book Review/BookReviewAmerican.html",
+    "david_sedaris_detail.html",
+    "../Book Review/BookReviewGhost.html",
+    "more_than_this_detail.html",
+    "a_clockwork_orange_detail.html"
+];
+
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(param);
@@ -21,38 +31,38 @@ function displayResults(results) {
         resultsContainer.innerHTML = '<p>No results found</p>';
     } else {
         results.forEach(book => {
-            const bookPreview = document.createElement('div');
-            bookPreview.classList.add('book-preview');
-
-            const bookContainer = document.createElement('div');
-            bookContainer.classList.add('book-container');
-
-            const bookLink = document.createElement('a');
-            bookLink.href = '#';
-
-            const bookImage = document.createElement('img');
-            bookImage.src = `../Home Page/${book}.jpg`;
-            bookImage.alt = book;
-
-            const bookInfo = document.createElement('div');
-            bookInfo.classList.add('book-info');
-
-            const bookTitle = document.createElement('h3');
-            bookTitle.textContent = book;
-
-            bookInfo.appendChild(bookTitle);
-            bookLink.appendChild(bookImage);
-            bookLink.appendChild(bookInfo);
-            bookContainer.appendChild(bookLink);
-            bookPreview.appendChild(bookContainer);
-
-            resultsContainer.appendChild(bookPreview);
+            const detailURL = bookDetailURLs[books.indexOf(book)];
+            resultsContainer.innerHTML += `
+                <div class="book-preview">
+                    <div class="book-container">
+                        <a href="#">
+                            <img src="../Home Page/${book}.jpg" alt="${book}">
+                            <div class="book-info">
+                                <h3>${book}</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="information">
+                        <h2>${book.toUpperCase()} AND THE SORCERER'S STONE</h2>
+                        <p style="margin-top: 10px;">Oleh JK Rowling</p>
+                        <div class="sub-info">
+                            <p>Fiksi</p>
+                            <p>Sastra</p>
+                        </div>
+                        <div class="star">
+                            <i class="fas fa-star" style="color: #FBBC05"></i>
+                            <p>4</p>    
+                        </div>
+                        <a href="${detailURL}">SELENGKAPNYA</a>
+                    </div>
+                </div>
+            `;
         });
     }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
     const query = getQueryParam('query').toLowerCase();
-    const results = books.filter(book => book.toLowerCase().includes(query.toLowerCase())); // Memastikan pencarian case-insensitive
+    const results = books.filter(book => book.toLowerCase().includes(query.toLowerCase()));
     displayResults(results);
 });

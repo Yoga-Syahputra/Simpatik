@@ -51,9 +51,28 @@ document.addEventListener('DOMContentLoaded', function() {
     moreBtn.addEventListener('click', function() {
         extraCategories.classList.add('expanded');
         categoryGrid.removeChild(moreBtn);
+    
+        // Create the new category div
         const newCategory = document.createElement('div');
         newCategory.classList.add('category-item');
-        newCategory.textContent = 'Sejarah';
+
+        const ctImgDiv = document.createElement('div');
+        ctImgDiv.classList.add('ct-img');
+    
+        // Create the image element
+        const newImage = document.createElement('img');
+        newImage.src = '/Home Page/Kategori/Sejarah.png';  // Replace with the correct image path
+        newImage.alt = 'Sejarah';  // Replace with appropriate alt text
+    
+        ctImgDiv.appendChild(newImage);
+        newCategory.appendChild(ctImgDiv);
+    
+        // Create the text element and append it
+        const textElement = document.createElement('p');
+        textElement.textContent = 'Sejarah';
+        newCategory.appendChild(textElement);
+    
+        // Append the new category div to the category grid
         categoryGrid.appendChild(newCategory);
     });
 
@@ -80,7 +99,6 @@ document.addEventListener('DOMContentLoaded', function() {
         searchBooks();
     });
 
-    // The rest of your existing DOMContentLoaded code...
 });
 
 
