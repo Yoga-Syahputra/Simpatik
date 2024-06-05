@@ -1,4 +1,4 @@
-# Simpatik Library Website - A library website submitted for the final project on the course Human and Computer Interaction 📚
+# Simpatik Library Website - A library Website Submitted for the Final Project on the Course Human and Computer Interaction 📚
 
 Welcome to Simpatik, your go-to platform for accessing a vast collection of books across various genres and topics. Dive into the world of literature with ease and discover captivating stories, insightful knowledge, and endless possibilities. 🌟
 
@@ -10,7 +10,7 @@ Welcome to Simpatik, your go-to platform for accessing a vast collection of book
 - **Convenient Reading Experience**: Access digital versions of books from any device, anytime, anywhere.
 - **Search**: Easily find books by title, author, genre, or keyword search, making it convenient to locate specific titles.
 
-## How to Use 🚀
+## What We Offer 🚀
 1. **Browse**: Explore our library by browsing through different genres, authors, or curated lists.
 2. **Search**: Use our search feature to find specific books or topics of interest.
 3. **Read**: Access digital copies of books instantly and start reading right away.
