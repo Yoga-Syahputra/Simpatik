@@ -79,7 +79,8 @@ Contributions are what make the open-source community such an amazing place to l
 5. Open a pull request.
 
 ### License
-Distributed under the MIT License. See LICENSE for more information.
+Distributed under the MIT License. See [LICENSE](https://github.com/Yoga-Syahputra/Simpatik/blob/main/LICENSE) for more information.
 
 ### Contact
-Yoga Syahputra - <a href="linkedin.com/in/ygsyp>Linkedin</a>
+Yoga Syahputra - [LinkedIn](https://www.linkedin.com/in/ygsyp)
+
