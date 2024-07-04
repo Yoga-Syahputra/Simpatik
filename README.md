@@ -74,7 +74,7 @@ Contributions are what make the open-source community such an amazing place to l
 
 4. Push to the branch: 
    ```sh
-   git push origin feature/AmazingFeature
+   git push origin feature/MyAttempt
 
 5. Open a pull request.
 
